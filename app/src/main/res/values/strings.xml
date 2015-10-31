@@ -14,4 +14,25 @@
     <string name="team_name_edit_text">Most Awesome Team Ever</string>
     <string name="submit_your_team_button">Submit Your Team</string>
     <string name="league_name_edit_text">AFC or NFC</string>
+    <string name="title_activity_add_player">add_player</string>
+
+    <string-array name="position_array">
+        <item>Center</item>
+        <item>Guard</item>
+        <item>Offensive tackle</item>
+        <item>Tight end</item>
+        <item>Wide receiver</item>
+        <item>Fullback</item>
+        <item>Running back</item>
+        <item>Tailback</item>
+        <item>H-back</item>
+        <item>Wingback</item>
+        <item>Slotback</item>
+        <item>Quarterback</item>
+        <item>Defensive end</item>
+        <item>Defensive tackle</item>
+        <item>Linebacker</item>
+        <item>Cornerback</item>
+        <item>Safety</item>
+    </string-array>
 </resources>
