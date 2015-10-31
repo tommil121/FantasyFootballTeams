@@ -47,7 +47,7 @@ public class DBHandler extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    public void addPerson(String teamName, String season, String leagueName){
+    public void addTeam(String teamName, String season, String leagueName){
 
         //inserting column name and value
         ContentValues values = new ContentValues();

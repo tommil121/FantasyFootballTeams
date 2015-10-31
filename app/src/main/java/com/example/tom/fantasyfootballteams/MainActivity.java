@@ -14,10 +14,14 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    Intent intent;
+
+    //DBHandler dbHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_team);
+        setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -32,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    public void goToCreateTeam(View view){
+        intent = new Intent(this, CreateTeamActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -44,11 +53,21 @@ public class MainActivity extends AppCompatActivity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        switch (item.getItemId()) {
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+            case R.id.menu_home:
+                intent = new Intent(this, MainActivity.class);
+
+                startActivity(intent);
+                return true;
+
+            case R.id.menu_create_team:
+
+                intent = new Intent(this, CreateTeamActivity.class);
+                startActivity(intent);
+
+                return true;
+
         }
 
         return super.onOptionsItemSelected(item);
