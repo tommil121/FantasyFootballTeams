@@ -11,7 +11,7 @@
     <string name="afc_radio_button">AFC</string>
     <string name="nfc_radio_button">NFC</string>
     <string name="season_edit_text">2015</string>
-    <string name="team_name_edit_text">Most Awesome Team Ever</string>
+    <string name="team_name_edit_text">Most Awesome Team Name Ever !!!</string>
     <string name="submit_your_team_button">Submit Your Team</string>
     <string name="league_name_edit_text">AFC or NFC</string>
 </resources>
