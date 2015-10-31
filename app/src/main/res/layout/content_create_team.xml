@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:showIn="@layout/activity_create_team"
+    tools:context="com.example.tom.fantasyfootballteams.CreateTeamActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/team_name_text_view"
+        android:id="@+id/textView2"
+        android:layout_row="0"
+        android:layout_column="0" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="136dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/team_name_text_view"
+            android:id="@+id/teamNameTextView"
+            android:layout_row="0"
+            android:layout_column="0" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/teamNameEditText"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_gravity="fill_horizontal|center_horizontal"
+            android:inputType="text"
+            android:hint="@string/team_name_edit_text" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/enter_season_text_view"
+            android:id="@+id/seasonTextView"
+            android:layout_row="2"
+            android:layout_column="0" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/seasonEditText"
+            android:layout_row="3"
+            android:layout_column="0"
+            android:hint="@string/season_edit_text"
+            android:gravity="fill_horizontal"
+            android:layout_gravity="fill_horizontal|center_horizontal" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="@string/choose_league_text_view"
+            android:id="@+id/textView"
+            android:layout_row="4"
+            android:layout_column="0" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/leagueNameEditText"
+            android:layout_row="5"
+            android:layout_column="0"
+            android:hint="@string/league_name_edit_text"
+            android:gravity="fill_horizontal"
+            android:layout_gravity="fill_horizontal|center_horizontal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit_your_team_button"
+            android:id="@+id/submitTeamButton"
+            android:layout_row="6"
+            android:layout_column="0"
+            android:gravity="center"
+            android:layout_gravity="right" />
+    </GridLayout>
+</RelativeLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">FantasyFootballTeams</string>
+    <string name="action_settings">Settings</string>
+    <string name="fantasy_football_team_maker">Fantasy Football Team Maker</string>
+    <string name="nfl_Logo">nflLogo</string>
+    <string name="create_team_button">Create Team</string>
+    <string name="title_activity_create_team">CreateTeamActivity</string>
+    <string name="team_name_text_view">Enter Team Name</string>
+    <string name="choose_league_text_view">Choose a League</string>
+    <string name="enter_season_text_view">Enter a Season</string>
+    <string name="afc_radio_button">AFC</string>
+    <string name="nfc_radio_button">NFC</string>
+    <string name="season_edit_text">2015</string>
+    <string name="team_name_edit_text">Most Awesome Team Ever</string>
+    <string name="submit_your_team_button">Submit Your Team</string>
+    <string name="league_name_edit_text">AFC or NFC</string>
+</resources>
