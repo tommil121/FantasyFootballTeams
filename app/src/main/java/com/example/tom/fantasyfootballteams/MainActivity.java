@@ -68,6 +68,13 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
 
+            case R.id.menu_add_player:
+
+                intent = new Intent(this, add_player.class);
+                startActivity(intent);
+
+                return true;
+
         }
 
         return super.onOptionsItemSelected(item);

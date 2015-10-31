@@ -105,6 +105,13 @@ public class CreateTeamActivity extends AppCompatActivity {
 
                 return true;
 
+            case R.id.menu_add_player:
+
+                intent = new Intent(this, add_player.class);
+                startActivity(intent);
+
+                return true;
+
             default :
                 return super.onOptionsItemSelected(item);
         }
