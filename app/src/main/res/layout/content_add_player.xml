@@ -20,8 +20,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Add a Player"
-            android:id="@+id/textView3"
+            android:text="@string/add_player"
+            android:id="@+id/add_player_title"
             android:layout_row="0"
             android:layout_column="0" />
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Player Name"
-            android:id="@+id/textView4"
+            android:id="@+id/player_name_text"
             android:layout_row="1"
             android:layout_column="0" />
 
@@ -47,7 +47,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Team Name"
-            android:id="@+id/textView5"
+            android:id="@+id/team_name_text"
             android:layout_row="3"
             android:layout_column="0" />
 
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Position"
-            android:id="@+id/textView6"
+            android:id="@+id/position_text"
             android:layout_row="5"
             android:layout_column="0" />
 
@@ -76,6 +76,14 @@
             android:layout_column="0"
             android:spinnerMode="dialog"
             android:entries="@array/position_array"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Player"
+            android:id="@+id/add_player_button"
+            android:layout_row="7"
+            android:layout_column="0" />
 
     </GridLayout>
 </RelativeLayout>
