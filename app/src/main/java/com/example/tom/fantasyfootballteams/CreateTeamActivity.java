@@ -47,21 +47,6 @@ public class CreateTeamActivity extends AppCompatActivity {
         });
     }
 
-    public void goToTeam (View view){
-
-        //change to run after button click submit team
-        String name = leagueNameEditText.getText().toString();
-
-        if (name.trim().equals(""))
-            //toast formats a message that displays in the app
-            Toast.makeText(this, "Please enter a team name!", Toast.LENGTH_LONG).show();
-        else {
-            intent = new Intent(this, MainActivity.class);
-            intent.putExtra("team name", name);
-            startActivity(intent);
-        }
-    }
-
     public void addData (View view){
 
         String teamName = teamNameEditText.getText().toString();
@@ -78,6 +63,11 @@ public class CreateTeamActivity extends AppCompatActivity {
             Toast.makeText(this, "Team added!",
                     Toast.LENGTH_LONG).show();
         }
+    }
+
+    public void goToTeamResultsActivity(View view){
+        intent = new Intent(this, TeamResultsActivity.class);
+        startActivity(intent);
     }
 
     @Override

@@ -28,6 +28,11 @@
             android:label="@string/title_activity_add_player"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".TeamResultsActivity"
+            android:label="@string/title_activity_team_results"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

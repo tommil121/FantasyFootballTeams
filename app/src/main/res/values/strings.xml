@@ -36,5 +36,7 @@
         <item>Cornerback</item>
         <item>Safety</item>
     </string-array>
+    <string name="title_activity_team_results">TeamResultsActivity</string>
+    <string name="view_your_team_button">View Your Team</string>
 
 </resources>

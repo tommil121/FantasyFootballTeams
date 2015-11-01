@@ -32,9 +32,9 @@ public class DBHandler extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         String query = "CREATE TABLE " + TABLE_TEAM + "(" +
-                COLUMN_TEAMID + " INTEGER PRIMARY KEY AUTOINCREMENT " +
-                COLUMN_TEAMNAME + " TEXT " +
-                COLUMN_TEAMSEASON + " TEXT " +
+                COLUMN_TEAMID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COLUMN_TEAMNAME + " TEXT," +
+                COLUMN_TEAMSEASON + " TEXT," +
                 COLUMN_TEAMLEAGUENAME + " TEXT " +
                 ");";
 
