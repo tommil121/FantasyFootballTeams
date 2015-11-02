@@ -27,9 +27,8 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String TABLE_PLAYER = "PLAYER";
     public static final String COLUMN_PLAYER_ID = "PLAYER_ID";
     public static final String COLUMN_PLAYER_NAME = "PLAYER_NAME";
-    public static final String COLUMN_PLAYER_NFL_TEAM = "NFL_TEAM";
     public static final String COLUMN_PLAYER_POSITION = "POSITION";
-    public static final String COLUMN_PLAYER_TEAM_ID = "TEAM_ID";
+    public static final String COLUMN_PLAYER_TEAM_NAME = "TEAM_NAME";
 
     private Team [] teamData;
     private Player [] playerData;
@@ -56,10 +55,8 @@ public class DBHandler extends SQLiteOpenHelper {
         query = "CREATE TABLE " + TABLE_PLAYER + "(" +
                 COLUMN_PLAYER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_PLAYER_NAME + " TEXT NOT NULL, " +
-                COLUMN_PLAYER_NFL_TEAM + " TEXT NOT NULL, " +
                 COLUMN_PLAYER_POSITION + " TEXT NOT NULL, " +
-                COLUMN_PLAYER_TEAM_ID + " INTEGER NOT NULL " +
-                "FOREIGN KEY(PLAYER_TEAM_FK) REFERENCES TEAM(TEAM_ID)" +
+                COLUMN_PLAYER_TEAM_NAME + " TEXT NOT NULL " +
                 ");";
 
         db.execSQL(query);
@@ -135,9 +132,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
         //put the values into the values variable. Prepare to insert
         values.put(TABLE_PLAYER, player.getName());
-        values.put(TABLE_PLAYER, player.getNflTeamName());
         values.put(TABLE_PLAYER, player.getPositionName());
-        values.put(TABLE_PLAYER, player.getTeamId());
+        values.put(TABLE_PLAYER, player.getTeamName());
 
 
         //connects to the database (so you can write into it)
@@ -176,8 +172,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
                 playerData[i] = new Player (c.getString(c.getColumnIndex(COLUMN_PLAYER_NAME)),
                         c.getString(c.getColumnIndex(COLUMN_PLAYER_POSITION)),
-                        c.getString(c.getColumnIndex(COLUMN_PLAYER_NFL_TEAM)),
-                        c.getInt(c.getColumnIndex(COLUMN_PLAYER_TEAM_ID))
+                        c.getString(c.getColumnIndex(COLUMN_PLAYER_TEAM_NAME))
 
                 );
 

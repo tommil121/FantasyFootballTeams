@@ -7,15 +7,13 @@ public class Player {
 
     private int id;
     private String name;
-    private String nflTeamName;
     private String positionName;
-    private int teamId;
+    private String teamName;
 
-    public Player(String name, String nflTeamName, String positionName, int teamId) {
+    public Player(String name, String teamName, String positionName) {
         this.name = name;
-        this.nflTeamName = nflTeamName;
         this.positionName = positionName;
-        this.teamId = teamId;
+        this.teamName = teamName;
     }
 
     public String getName() {
@@ -26,14 +24,6 @@ public class Player {
         this.name = name;
     }
 
-    public String getNflTeamName() {
-        return nflTeamName;
-    }
-
-    public void setNflTeamName(String nflTeamName) {
-        this.nflTeamName = nflTeamName;
-    }
-
     public String getPositionName() {
         return positionName;
     }
@@ -42,11 +32,11 @@ public class Player {
         this.positionName = positionName;
     }
 
-    public int getTeamId() {
-        return teamId;
+    public String getTeamName() {
+        return teamName;
     }
 
-    public void setTeamId(int teamId) {
-        this.teamId = teamId;
+    public void setTeamName(String teamName) {
+        this.teamName = teamName;
     }
 }

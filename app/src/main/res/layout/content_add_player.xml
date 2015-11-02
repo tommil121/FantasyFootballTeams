@@ -88,6 +88,7 @@
             android:layout_height="wrap_content"
             android:text="Add Player"
             android:id="@+id/add_player_button"
+            android:onClick="addData"
             android:layout_row="7"
             android:layout_column="0" />
 

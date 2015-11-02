@@ -9,19 +9,57 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 public class add_player extends AppCompatActivity {
 
     Intent intent;
 
+    EditText playerNameEditText;
+    EditText teamNameEditText;
+    Spinner positionSpinner;
+    DBHandler dbHandler;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
+
+        playerNameEditText = (EditText) findViewById(R.id.player_name);
+        teamNameEditText = (EditText)findViewById(R.id.team_name);
+        positionSpinner = (Spinner)findViewById(R.id.position_spinner);
+
+        dbHandler = new DBHandler(this, null);
+
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         }
+
+    public void addData (View view){
+
+        String playerName = playerNameEditText.getText().toString();
+        String teamName = teamNameEditText.getText().toString();
+        String position = positionSpinner.toString();
+
+        Player newPlayer = new Player(playerName, teamName, position);
+
+
+        if (teamName.trim().equals("") || playerName.trim().equals("")
+                || position.trim().equals(""))
+            Toast.makeText(this, "Please enter a Player name, valid team name, and position!",
+                    Toast.LENGTH_LONG).show();
+
+        else {
+            dbHandler.addPlayer(newPlayer);
+            Toast.makeText(this, "Player added!",
+                    Toast.LENGTH_LONG).show();
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
