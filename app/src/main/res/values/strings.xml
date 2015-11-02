@@ -18,23 +18,12 @@
     <string name="add_player">Add a Player</string>
 
     <string-array name="position_array">
-        <item>Center</item>
-        <item>Guard</item>
-        <item>Offensive tackle</item>
-        <item>Tight end</item>
-        <item>Wide receiver</item>
-        <item>Fullback</item>
-        <item>Running back</item>
-        <item>Tailback</item>
-        <item>H-back</item>
-        <item>Wingback</item>
-        <item>Slotback</item>
-        <item>Quarterback</item>
-        <item>Defensive end</item>
-        <item>Defensive tackle</item>
-        <item>Linebacker</item>
-        <item>Cornerback</item>
-        <item>Safety</item>
+        <item>QB</item>
+        <item>RB</item>
+        <item>WR</item>
+        <item>TE</item>
+        <item>K</item>
+        <item>DST</item>
     </string-array>
     <string name="title_activity_team_results">TeamResultsActivity</string>
     <string name="view_your_team_button">View Teams</string>
