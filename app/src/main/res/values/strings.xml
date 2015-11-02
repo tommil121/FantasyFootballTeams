@@ -27,5 +27,7 @@
     </string-array>
     <string name="title_activity_team_results">TeamResultsActivity</string>
     <string name="view_your_team_button">View Teams</string>
+    <string name="title_activity_player_results2">player_results2</string>
+    <string name="title_activity_player_result">player_result</string>
 
 </resources>

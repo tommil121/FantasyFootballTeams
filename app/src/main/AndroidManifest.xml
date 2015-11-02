@@ -33,6 +33,8 @@
             android:label="@string/title_activity_team_results"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".player_results" >
+        </activity>
     </application>
 
 </manifest>

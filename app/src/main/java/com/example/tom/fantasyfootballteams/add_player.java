@@ -40,6 +40,11 @@ public class add_player extends AppCompatActivity {
 
         }
 
+    public void goToPlayerResultsActivity(View view){
+        intent = new Intent(this, player_results.class);
+        startActivity(intent);
+    }
+
     public void addData (View view){
 
         String playerName = playerNameEditText.getText().toString();
