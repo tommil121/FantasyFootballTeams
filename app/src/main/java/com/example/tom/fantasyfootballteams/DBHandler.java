@@ -88,6 +88,11 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    public void deleteTeam(String teamName){
+
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_TEAM + " WHERE " + COLUMN_TEAMNAME + "=\"" + teamName + "\";");
+    }
     public Team [] getTeams (){
 
         SQLiteDatabase db = getWritableDatabase();
