@@ -27,6 +27,9 @@ public class player_results extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
+
         setContentView(R.layout.activity_player_result);
         dbHandler = new DBHandler(this, null);
 
