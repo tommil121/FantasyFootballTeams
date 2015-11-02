@@ -6,16 +6,21 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class TeamResultsActivity extends AppCompatActivity {
 
+    //an array of team data
     private Team [] teamData;
 
     DBHandler dbHandler;
 
+    //responsible for turning data into list items
+    //that our activity can use
     ListAdapter adapter;
 
     @Override
@@ -32,13 +37,27 @@ public class TeamResultsActivity extends AppCompatActivity {
         if (teamData != null){
             adapter = new TeamResultsAdapter(this, teamData);
         } else {
+            //Set out List Adpater to an ArrayAdapter which converts array
+            // to List Items, in this case List Items are Strings
             adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, noTeams);
         }
 
-        ListView listView = (ListView) findViewById(R.id.teamListView);
+        //create ListView object
+        ListView teamListView = (ListView) findViewById(R.id.teamListView);
 
-        listView.setAdapter(adapter);
+        //set adapater on teamListView
+        teamListView.setAdapter(adapter);
 
+        //create listener to generate the Team ToString on user tap
+        teamListView.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        String name = String.valueOf(parent.getItemAtPosition(position));
+                        Toast.makeText(TeamResultsActivity.this, name, Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

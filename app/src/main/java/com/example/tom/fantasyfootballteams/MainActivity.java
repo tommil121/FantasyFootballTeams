@@ -55,12 +55,15 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         switch (item.getItemId()) {
 
+            //set intent of menu to navigate to main_activity
             case R.id.menu_home:
+
                 intent = new Intent(this, MainActivity.class);
 
                 startActivity(intent);
                 return true;
 
+            //set intent of menu to navigate to create_team_activity
             case R.id.menu_create_team:
 
                 intent = new Intent(this, CreateTeamActivity.class);
@@ -68,6 +71,7 @@ public class MainActivity extends AppCompatActivity {
 
                 return true;
 
+            //set intent of menu to navigate to add_player_activity
             case R.id.menu_add_player:
 
                 intent = new Intent(this, add_player.class);
