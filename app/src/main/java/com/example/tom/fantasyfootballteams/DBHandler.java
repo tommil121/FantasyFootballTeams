@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATA_VERSION = 1;
+    private static final int DATA_VERSION = 2;
     private static final String DATABASE_NAME = "team.db";
 
     private static final String TABLE_TEAM = "team";
@@ -44,8 +44,8 @@ public class DBHandler extends SQLiteOpenHelper {
         //create team table
         String query = "CREATE TABLE " + TABLE_TEAM + "(" +
                 COLUMN_TEAMID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COLUMN_TEAMNAME + " TEXT," +
-                COLUMN_TEAMSEASON + " TEXT," +
+                COLUMN_TEAMNAME + " TEXT, " +
+                COLUMN_TEAMSEASON + " TEXT, " +
                 COLUMN_TEAMLEAGUENAME + " TEXT " +
                 ");";
 
@@ -54,8 +54,8 @@ public class DBHandler extends SQLiteOpenHelper {
         //create player table
         query = "CREATE TABLE " + TABLE_PLAYER + "(" +
                 COLUMN_PLAYER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
-                COLUMN_PLAYER_NAME + " TEXT," +
-                COLUMN_PLAYER_POSITION + " TEXT," +
+                COLUMN_PLAYER_NAME + " TEXT, " +
+                COLUMN_PLAYER_POSITION + " TEXT, " +
                 COLUMN_PLAYER_TEAM_NAME + " TEXT " +
                 ");";
 
@@ -64,7 +64,8 @@ public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion){
-        db.execSQL("DROP TABLE IF EXIST " + TABLE_TEAM);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_TEAM);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_PLAYER);
         onCreate(db);
     }
 
