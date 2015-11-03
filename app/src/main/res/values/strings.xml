@@ -29,5 +29,6 @@
     <string name="view_your_team_button">View Teams</string>
     <string name="title_activity_player_results2">player_results2</string>
     <string name="title_activity_player_result">player_result</string>
+    <string name="delete_team_button">Delete Team</string>
 
 </resources>

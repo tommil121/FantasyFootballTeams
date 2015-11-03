@@ -65,6 +65,13 @@ public class CreateTeamActivity extends AppCompatActivity {
         }
     }
 
+    //delete team from team table
+    public void deleteTeamData(View view){
+        String teamName = teamNameEditText.getText().toString();
+        dbHandler.deleteTeam(teamName);
+    }
+
+
     public void goToTeamResultsActivity(View view){
         intent = new Intent(this, TeamResultsActivity.class);
         startActivity(intent);
