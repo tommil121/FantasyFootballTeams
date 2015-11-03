@@ -48,19 +48,19 @@ public class add_player extends AppCompatActivity {
     public void addData (View view){
 
         String playerName = playerNameEditText.getText().toString();
-        String teamName = teamNameEditText.getText().toString();
         String position = positionSpinner.toString();
+        String playerTeamName = teamNameEditText.getText().toString();
 
-        Player newPlayer = new Player(playerName, teamName, position);
+        //Player newPlayer = new Player(playerName, playerTeamName, position);
 
 
-        if (teamName.trim().equals("") || playerName.trim().equals("")
-                || position.trim().equals(""))
+        if (playerName.trim().equals("") || position.trim().equals("")
+                || playerTeamName.trim().equals(""))
             Toast.makeText(this, "Please enter a Player name, valid team name, and position!",
                     Toast.LENGTH_LONG).show();
 
         else {
-            dbHandler.addPlayer(newPlayer);
+            dbHandler.addPlayer(playerName, position, playerTeamName);
             Toast.makeText(this, "Player added!",
                     Toast.LENGTH_LONG).show();
         }

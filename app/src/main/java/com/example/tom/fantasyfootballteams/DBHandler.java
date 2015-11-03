@@ -53,10 +53,10 @@ public class DBHandler extends SQLiteOpenHelper {
 
         //create player table
         query = "CREATE TABLE " + TABLE_PLAYER + "(" +
-                COLUMN_PLAYER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_PLAYER_NAME + " TEXT NOT NULL, " +
-                COLUMN_PLAYER_POSITION + " TEXT NOT NULL, " +
-                COLUMN_PLAYER_TEAM_NAME + " TEXT NOT NULL " +
+                COLUMN_PLAYER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
+                COLUMN_PLAYER_NAME + " TEXT," +
+                COLUMN_PLAYER_POSITION + " TEXT," +
+                COLUMN_PLAYER_TEAM_NAME + " TEXT " +
                 ");";
 
         db.execSQL(query);
@@ -85,11 +85,15 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    //deletes specified team row from database
+    //based on team name
     public void deleteTeam(String teamName){
 
         SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE FROM " + TABLE_TEAM + " WHERE " + COLUMN_TEAMNAME + "=\"" + teamName + "\";");
+        db.execSQL("DELETE FROM " + TABLE_TEAM + " WHERE "
+                + COLUMN_TEAMNAME + "=\"" + teamName + "\";");
     }
+
     public Team [] getTeams (){
 
         SQLiteDatabase db = getWritableDatabase();
@@ -127,13 +131,13 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //Add a row to the player table
-    public void addPlayer(Player player){
+    public void addPlayer(String playerName, String playerPosition, String playerTeam){
         ContentValues values = new ContentValues();
 
         //put the values into the values variable. Prepare to insert
-        values.put(TABLE_PLAYER, player.getName());
-        values.put(TABLE_PLAYER, player.getPositionName());
-        values.put(TABLE_PLAYER, player.getTeamName());
+        values.put(COLUMN_PLAYER_NAME, playerName);
+        values.put(COLUMN_PLAYER_POSITION, playerPosition);
+        values.put(COLUMN_PLAYER_TEAM_NAME, playerTeam);
 
 
         //connects to the database (so you can write into it)
