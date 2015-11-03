@@ -52,7 +52,7 @@ public class player_results extends AppCompatActivity {
         playerListView.setAdapter(adapter);
 
         //create listener to generate the Player ToString on user tap
-        playerListView.setOnItemClickListener(
+        /*playerListView.setOnItemClickListener(
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -60,7 +60,7 @@ public class player_results extends AppCompatActivity {
                         Toast.makeText(player_results.this, name, Toast.LENGTH_LONG).show();
                     }
                 }
-        );
+        ); */
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 

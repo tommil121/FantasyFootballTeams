@@ -1,10 +1,13 @@
 package com.example.tom.fantasyfootballteams;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,6 +22,8 @@ public class TeamResultsActivity extends AppCompatActivity {
 
     DBHandler dbHandler;
 
+    //create intent object for menu
+    Intent intent;
     //responsible for turning data into list items
     //that our activity can use
     ListAdapter adapter;
@@ -71,4 +76,40 @@ public class TeamResultsActivity extends AppCompatActivity {
         });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+
+            case R.id.menu_home :
+                intent = new Intent(this, MainActivity.class);
+
+                startActivity(intent);
+                return true;
+
+            case R.id.menu_create_team :
+
+                intent = new Intent(this, CreateTeamActivity.class);
+                startActivity(intent);
+
+                return true;
+
+            case R.id.menu_add_player:
+
+                intent = new Intent(this, add_player.class);
+                startActivity(intent);
+
+                return true;
+
+            default :
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
