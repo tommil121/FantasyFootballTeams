@@ -48,7 +48,7 @@ public class add_player extends AppCompatActivity {
     public void addData (View view){
 
         String playerName = playerNameEditText.getText().toString();
-        String position = positionSpinner.toString();
+        String position = positionSpinner.getItemAtPosition(positionSpinner.getFirstVisiblePosition()).toString();
         String playerTeamName = teamNameEditText.getText().toString();
 
         //Player newPlayer = new Player(playerName, playerTeamName, position);
