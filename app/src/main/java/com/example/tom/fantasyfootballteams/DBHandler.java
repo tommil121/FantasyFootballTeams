@@ -86,13 +86,22 @@ public class DBHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    /*Dustin: I changed this because if the team name is not unique, it will cause problems
+              because there could be teams with the same name, but different years. If we just
+              solve this problem in the delete page, it will be okay. Also, if we use a dropdown
+              on the delete team page, we will have to use an array of Teams, and we will already
+              have the objects and the id
+    */
     //deletes specified team row from database
-    //based on team name
-    public void deleteTeam(String teamName){
+    //based on team id
+    //
+    public void deleteTeam(Team team){
+
+
 
         SQLiteDatabase db = getWritableDatabase();
         db.execSQL("DELETE FROM " + TABLE_TEAM + " WHERE "
-                + COLUMN_TEAMNAME + "=\"" + teamName + "\";");
+                + COLUMN_TEAMID + "=" + team.getId() + ";");
     }
 
     public Team [] getTeams (){
@@ -148,10 +157,13 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //Delete a row from the player table
-    public void deletePlayer(String playerName){
-        SQLiteDatabase db = getWritableDatabase();
-        db.execSQL("DELETE FROM " + TABLE_PLAYER + " WHERE " + COLUMN_PLAYER_NAME + "=\"" + playerName + "\";");
+    public void deletePlayer(Player player){
 
+
+
+        SQLiteDatabase db = getWritableDatabase();
+        db.execSQL("DELETE FROM " + TABLE_PLAYER + " WHERE "
+                + COLUMN_PLAYER_ID + "=" + player.getId() + ";");
     }
 
     //retrieve rows from the player table
