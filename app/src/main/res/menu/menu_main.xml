@@ -15,5 +15,9 @@
             android:orderInCategory="3"
             app:showAsAction="never"
             android:title="Add Player"/>
+        <item android:id="@+id/menu_delete_team"
+            android:orderInCategory="4"
+            app:showAsAction="never"
+            android:title="Delete Team"/>
     </group>
 </menu>

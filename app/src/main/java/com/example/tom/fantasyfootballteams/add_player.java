@@ -74,7 +74,7 @@ public class add_player extends AppCompatActivity {
 
         String playerName = playerNameEditText.getText().toString();
         String position = positionSpinner.getItemAtPosition(positionSpinner.getFirstVisiblePosition()).toString();
-        String playerTeamName = teamNameSpinner.getItemAtPosition(positionSpinner.getFirstVisiblePosition()).toString();
+        String playerTeamName = teamNameSpinner.getItemAtPosition(teamNameSpinner.getFirstVisiblePosition()).toString();
 
         //Player newPlayer = new Player(playerName, playerTeamName, position);
 
@@ -119,6 +119,12 @@ public class add_player extends AppCompatActivity {
             case R.id.menu_add_player:
 
                 intent = new Intent(this, add_player.class);
+                startActivity(intent);
+
+                return true;
+            case R.id.menu_delete_team:
+
+                intent = new Intent(this, delete_team.class);
                 startActivity(intent);
 
                 return true;

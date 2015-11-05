@@ -78,6 +78,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 return true;
+            case R.id.menu_delete_team:
+
+                intent = new Intent(this, delete_team.class);
+                startActivity(intent);
+
+                return true;
 
         }
 

@@ -40,6 +40,11 @@
             android:label="@string/title_activity_delete_team"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".delete_player"
+            android:label="@string/title_activity_delete_player"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
