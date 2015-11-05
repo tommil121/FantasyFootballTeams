@@ -84,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 return true;
+            case R.id.menu_delete_player:
+
+                intent = new Intent(this, delete_player.class);
+                startActivity(intent);
+
+                return true;
 
         }
 

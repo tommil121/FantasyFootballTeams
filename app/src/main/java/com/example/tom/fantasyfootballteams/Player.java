@@ -53,7 +53,7 @@ public class Player {
 
     @Override
     public String toString(){
-        return (this.name + "   " + this.positionName);
+        return (this.name + "   " + this.positionName + "   " + this.teamName);
     }
 
     public String toStringWithTeam(Team team){

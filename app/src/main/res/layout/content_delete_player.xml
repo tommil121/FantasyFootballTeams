@@ -14,23 +14,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Large Text"
-        android:id="@+id/textView3"
+        android:text="Select a Player to Delete"
+        android:id="@+id/select_player_text"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:layout_below="@+id/textView3"
+        android:id="@+id/select_player_spinner"
+        android:layout_below="@+id/select_player_text"
         android:layout_centerHorizontal="true" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_below="@+id/spinner"
-        android:layout_centerHorizontal="true" />
+        android:text="Delete Player"
+        android:id="@+id/delete_player_button"
+        android:layout_below="@+id/select_player_spinner"
+        android:layout_centerHorizontal="true"
+        android:onClick="deletePlayerData" />
 </RelativeLayout>
