@@ -34,20 +34,27 @@ public class delete_team extends AppCompatActivity {
 
         dbHandler = new DBHandler(this, null);
 
+        //put all of the teams in an array of Team objects
         teams = dbHandler.getTeams();
 
+        //declare and initialize an array list for strings
         teamList = new ArrayList<String>();
 
 
-
+        //go through the list of Team objects and extract the "list friendly" toString method and
+        //add them to the array list
         for(int i = 0; i < teams.length; i++){
             teamList.add(teams[i].toStringPlayer());
         }
 
+        //create an adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
                 this, android.R.layout.simple_spinner_item, teamList);
 
+        //set the adapter to fill the list
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //apply the adapter to the spinner
         teamNameSpinner.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
