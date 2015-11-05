@@ -49,7 +49,7 @@ public class TeamResultsAdapter extends ArrayAdapter<Team> {
         seasonTextView.setText(team.getSeason());
         leagueNameTextView.setText(team.getLeagueName());
 
-        //retrn the team view
+        //return the team view
         return teamView;
     }
 }

@@ -65,9 +65,17 @@ public class CreateTeamActivity extends AppCompatActivity {
         }
     }
 
+
+
+    //not going to work because the new delete method works via id
     //delete team from team table
     public void deleteTeamData(View view){
-        String teamName = teamNameEditText.getText().toString();
+        Team teamName = new Team(
+            teamNameEditText.getText().toString(),
+            seasonEditText.getText().toString(),
+            leagueNameEditText.getText().toString()
+        );
+
         dbHandler.deleteTeam(teamName);
     }
 

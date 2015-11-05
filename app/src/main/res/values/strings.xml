@@ -30,5 +30,6 @@
     <string name="title_activity_player_results2">player_results2</string>
     <string name="title_activity_player_result">player_result</string>
     <string name="delete_team_button">Delete Team</string>
+    <string name="title_activity_delete_team">delete_team</string>
 
 </resources>

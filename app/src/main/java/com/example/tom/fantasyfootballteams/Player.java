@@ -1,9 +1,12 @@
 package com.example.tom.fantasyfootballteams;
 
+import android.widget.SimpleCursorAdapter;
+
 /**
  * Created by Dustin on 11/2/15.
  */
 public class Player {
+
 
     private int id;
     private String name;
@@ -18,6 +21,10 @@ public class Player {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -42,5 +49,14 @@ public class Player {
 
     public void setTeamName(String teamName) {
         this.teamName = teamName;
+    }
+
+    @Override
+    public String toString(){
+        return (this.name + "   " + this.positionName);
+    }
+
+    public String toStringWithTeam(Team team){
+        return (this.toString() + "   " + team.toStringPlayer());
     }
 }

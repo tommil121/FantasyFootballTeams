@@ -9,18 +9,26 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+
+import java.util.ArrayList;
 
 public class add_player extends AppCompatActivity {
 
     Intent intent;
 
     EditText playerNameEditText;
-    EditText teamNameEditText;
+    Spinner teamNameSpinner;
     Spinner positionSpinner;
     DBHandler dbHandler;
+
+    //For team spinner
+    Team [] teams;
+    ArrayList<String> teamList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,10 +36,27 @@ public class add_player extends AppCompatActivity {
         setContentView(R.layout.activity_add_player);
 
         playerNameEditText = (EditText) findViewById(R.id.player_name);
-        teamNameEditText = (EditText)findViewById(R.id.team_name);
+        teamNameSpinner = (Spinner)findViewById(R.id.team_name_spinner);
         positionSpinner = (Spinner)findViewById(R.id.position_spinner);
 
         dbHandler = new DBHandler(this, null);
+
+        //Fill team spinner code
+        teams = dbHandler.getTeams();
+
+        teamList = new ArrayList<String>();
+
+
+
+        for(int i = 0; i < teams.length; i++){
+            teamList.add(teams[i].toStringPlayer());
+        }
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, teamList);
+
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        teamNameSpinner.setAdapter(adapter);
 
 
 
@@ -49,7 +74,7 @@ public class add_player extends AppCompatActivity {
 
         String playerName = playerNameEditText.getText().toString();
         String position = positionSpinner.getItemAtPosition(positionSpinner.getFirstVisiblePosition()).toString();
-        String playerTeamName = teamNameEditText.getText().toString();
+        String playerTeamName = teamNameSpinner.getItemAtPosition(positionSpinner.getFirstVisiblePosition()).toString();
 
         //Player newPlayer = new Player(playerName, playerTeamName, position);
 

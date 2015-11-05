@@ -49,7 +49,7 @@ public class player_results_adapter extends ArrayAdapter<Player> {
         teamNameTextView.setText(player.getTeamName());
         positionTextView.setText(player.getPositionName());
 
-        //retrn the player view
+        //return the player view
         return playerView;
     }
 }

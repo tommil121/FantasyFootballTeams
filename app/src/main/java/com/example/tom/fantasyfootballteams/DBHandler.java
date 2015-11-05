@@ -129,6 +129,8 @@ public class DBHandler extends SQLiteOpenHelper {
                         c.getString(c.getColumnIndex("leagueName"))
                 );
 
+                teamData[i].setId(c.getInt(c.getColumnIndex("id")));
+
                 c.moveToNext();
 
                 i++;
@@ -192,6 +194,8 @@ public class DBHandler extends SQLiteOpenHelper {
                         c.getString(c.getColumnIndex(COLUMN_PLAYER_TEAM_NAME))
 
                 );
+
+                playerData[i].setId(c.getInt(c.getColumnIndex(COLUMN_PLAYER_ID)));
 
                 c.moveToNext();
 

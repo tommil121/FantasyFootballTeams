@@ -57,4 +57,8 @@ public class Team {
                 "Season : " + season + "\n" +
                 "League Name : " + leagueName;
     }
+
+    public String toStringPlayer() {
+        return (this.teamName + "   " + this.season + "   " + this.leagueName);
+    }
 }
