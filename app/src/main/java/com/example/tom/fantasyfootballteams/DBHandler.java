@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATA_VERSION = 2;
+    private static final int DATA_VERSION = 3;
     private static final String DATABASE_NAME = "team.db";
 
     private static final String TABLE_TEAM = "team";
@@ -28,7 +28,13 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String COLUMN_PLAYER_ID = "PLAYER_ID";
     public static final String COLUMN_PLAYER_NAME = "PLAYER_NAME";
     public static final String COLUMN_PLAYER_POSITION = "POSITION";
-    public static final String COLUMN_PLAYER_TEAM_NAME = "TEAM_NAME";
+    public static final String COLUMN_PLAYER_TEAM_NAME = "TEAM_NAME"; //NOT CHANGING THIS YET... WILL CHANGE THOUGH
+    public static final String COLUMN_PLAYER_BENCHED = "BENCHED";
+
+    //create Roster table
+    public static final String TABLE_ROSTER = "ROSTER";
+    public static final String COLUMN_ROSTER_ID = "ROSTER_ID";
+    public static final String COLUMN_ROSTER_PLAYER_ID = "PLAYER_ID";
 
     private Team [] teamData;
     private Player [] playerData;
@@ -57,6 +63,15 @@ public class DBHandler extends SQLiteOpenHelper {
                 COLUMN_PLAYER_NAME + " TEXT, " +
                 COLUMN_PLAYER_POSITION + " TEXT, " +
                 COLUMN_PLAYER_TEAM_NAME + " TEXT " +
+                COLUMN_PLAYER_BENCHED + " INTEGER DEFAULT = 1 " +
+                ");"; //DEFAULT IS TRUE
+
+        db.execSQL(query);
+
+        //create Roster table
+        query = "CREATE TABLE " + TABLE_ROSTER + "(" +
+                COLUMN_ROSTER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                COLUMN_ROSTER_PLAYER_ID + " INTEGER " +
                 ");";
 
         db.execSQL(query);
