@@ -46,6 +46,10 @@ public class add_player extends AppCompatActivity {
 
         teamList = new ArrayList<String>();
 
+        if(teams == null) {
+            teams = new Team[1];
+            teams[0] = new Team("Please", " add a ", "team");
+        }
 
 
         for(int i = 0; i < teams.length; i++){

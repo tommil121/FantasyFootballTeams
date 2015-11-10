@@ -43,7 +43,7 @@ public class delete_team extends AppCompatActivity {
 
         if(teams == null) {
             teams = new Team[1];
-            teams[0] = new Team("Please", " team ", "add a");
+            teams[0] = new Team("Please", " add a ", "team");
         }
         //go through the list of Team objects and extract the "list friendly" toString method and
         //add them to the array list
