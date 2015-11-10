@@ -11,7 +11,6 @@ public class notes {
     amount of work. I will do it, but not until we start our next sprint. Everything works for me as
     of 11/5/15
 
-    Fully implemented delete player. I also added a toast to both delete files. I added delete player to the menu. I also created a notes file.
 
 
 
