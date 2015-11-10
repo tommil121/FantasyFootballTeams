@@ -32,5 +32,6 @@
     <string name="delete_team_button">Delete Team</string>
     <string name="title_activity_delete_team">delete_team</string>
     <string name="title_activity_delete_player">delete_player</string>
+    <string name="title_activity_add_to_roster">add_to_roster</string>
 
 </resources>

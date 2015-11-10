@@ -35,6 +35,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String TABLE_ROSTER = "ROSTER";
     public static final String COLUMN_ROSTER_ID = "ROSTER_ID";
     public static final String COLUMN_ROSTER_PLAYER_ID = "PLAYER_ID";
+    public static final String COLUMN_ROSTER_WEEK = "ROSTER_WEEK";
 
     private Team [] teamData;
     private Player [] playerData;
@@ -72,6 +73,7 @@ public class DBHandler extends SQLiteOpenHelper {
         query = "CREATE TABLE " + TABLE_ROSTER + "(" +
                 COLUMN_ROSTER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_ROSTER_PLAYER_ID + " INTEGER " +
+                COLUMN_ROSTER_WEEK + " INTEGER " +
                 ");";
 
         db.execSQL(query);
