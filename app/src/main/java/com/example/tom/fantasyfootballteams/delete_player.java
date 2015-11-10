@@ -35,11 +35,16 @@ public class delete_player extends AppCompatActivity {
 
         dbHandler = new DBHandler(this, null);
 
-        //put all of the teams in an array of Team objects
+        //put all of the teams in an array of Player objects
         players = dbHandler.getPlayers();
 
         //declare and initialize an array list for strings
         playerList = new ArrayList<String>();
+
+        if(players == null) {
+            players = new Player[1];
+            players[0] = new Player("Please", " player ", "add a");
+        }
 
 
         //go through the list of Team objects and extract the "list friendly" toString method and

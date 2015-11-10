@@ -41,7 +41,10 @@ public class delete_team extends AppCompatActivity {
         //declare and initialize an array list for strings
         teamList = new ArrayList<String>();
 
-
+        if(teams == null) {
+            teams = new Team[1];
+            teams[0] = new Team("Please", " team ", "add a");
+        }
         //go through the list of Team objects and extract the "list friendly" toString method and
         //add them to the array list
         for(int i = 0; i < teams.length; i++){
