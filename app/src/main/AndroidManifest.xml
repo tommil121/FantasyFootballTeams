@@ -50,6 +50,11 @@
             android:label="@string/title_activity_add_to_roster"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".TeamWeekActivity"
+            android:label="@string/title_activity_team_week"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>
