@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATA_VERSION = 4;
+    private static final int DATA_VERSION = 6;
     private static final String DATABASE_NAME = "team.db";
 
     private static final String TABLE_TEAM = "team";
@@ -65,7 +65,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 COLUMN_PLAYER_NAME + " TEXT, " +
                 COLUMN_PLAYER_POSITION + " TEXT, " +
                 COLUMN_PLAYER_TEAM_NAME + " TEXT " +
-                COLUMN_PLAYER_BENCHED + " INTEGER DEFAULT = 1 " +
+                COLUMN_PLAYER_BENCHED + " INTEGER DEFAULT 1 " +
                 ");"; //DEFAULT IS TRUE
 
         db.execSQL(query);
