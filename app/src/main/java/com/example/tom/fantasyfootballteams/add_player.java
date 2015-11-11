@@ -26,6 +26,8 @@ public class add_player extends AppCompatActivity {
     Spinner positionSpinner;
     DBHandler dbHandler;
 
+    int playerCounter = 0;
+
     //For team spinner
     Team [] teams;
     ArrayList<String> teamList;
@@ -88,10 +90,23 @@ public class add_player extends AppCompatActivity {
             Toast.makeText(this, "Please enter a Player name, valid team name, and position!",
                     Toast.LENGTH_LONG).show();
 
+        //added else if statement to account for situation in which the number of players
+        //being added to this team reaches 13 which is the set limit
+        //if this limit is reached, toast displays message telling user
+        else if (playerCounter == 13) {
+            Toast.makeText(this, "Total players added cannot exceed 13!",
+                    Toast.LENGTH_LONG).show();
+        }
+
         else {
             dbHandler.addPlayer(playerName, position, playerTeamName);
             Toast.makeText(this, "Player added!",
                     Toast.LENGTH_LONG).show();
+
+            //added playerCounter variable to this method to accumulate the number
+            //of players being added to this team
+            //if playerCounter equals 13, add functionality ends
+            playerCounter += 1;
         }
     }
 
