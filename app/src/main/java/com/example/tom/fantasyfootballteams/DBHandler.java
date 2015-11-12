@@ -277,4 +277,52 @@ public class DBHandler extends SQLiteOpenHelper {
         return playerData;
     }
 
+    //retrieve rows from the player table
+    public Player [] getPlayersWhere (String where, String operator, String condition, String andWhere,
+                                      String andOp, String andCond ){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "";
+
+        if(andWhere == null)
+            query = "SELECT * FROM " + TABLE_PLAYER + " WHERE " + where + operator + "\"" + condition + "\"" +  ";";
+        else
+            query = "SELECT * FROM " + TABLE_PLAYER + " WHERE " + where + operator + "\"" + condition + "\"" +
+                    " AND " + andWhere + andOp + "\"" + andCond + "\""  + ";";
+
+
+        Cursor c = db.rawQuery(query, null);
+
+        int numPlayers = c.getCount();
+
+        if (numPlayers >= 1) {
+
+            playerData = new Player [numPlayers];
+
+            int i = 0;
+
+            c.moveToFirst();
+
+            while (!c.isAfterLast()){
+
+                playerData[i] = new Player (c.getString(c.getColumnIndex(COLUMN_PLAYER_NAME)),
+                        c.getString(c.getColumnIndex(COLUMN_PLAYER_POSITION)),
+                        c.getString(c.getColumnIndex(COLUMN_PLAYER_TEAM_NAME))
+
+                );
+
+                playerData[i].setId(c.getInt(c.getColumnIndex(COLUMN_PLAYER_ID)));
+
+                c.moveToNext();
+
+                i++;
+            }
+        }
+
+        db.close();
+
+        return playerData;
+    }
+
 }
