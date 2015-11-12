@@ -1,5 +1,6 @@
 package com.example.tom.fantasyfootballteams;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -10,10 +11,13 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
 public class add_to_roster extends AppCompatActivity {
+
+    String oldTeam = null;
 
     //declare spinners
     Spinner teamSpinner;
@@ -114,7 +118,10 @@ public class add_to_roster extends AppCompatActivity {
                 Log.v("Teams", "Teams selected");
 
                 //get the team name that was selected
-                String team = teamSpinner.getItemAtPosition(position).toString();
+                String team = teams[position].getTeamName();
+
+
+                displayToast(team);
 
                 //get players for each position
                 qb = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "QB");
@@ -216,7 +223,7 @@ public class add_to_roster extends AppCompatActivity {
                 dstSpinner.setAdapter(dstAdapter);
 
 
-
+                goToPlayerResultsActivity(team);
 
             }
 
@@ -229,6 +236,24 @@ public class add_to_roster extends AppCompatActivity {
 
         });
         }
+
+    public void displayToast(String name){
+        Toast.makeText(this, name,
+                Toast.LENGTH_LONG).show();
+
+    }
+
+    public void goToPlayerResultsActivity(String newTeam){
+        if(oldTeam == null)
+            oldTeam = newTeam;
+
+        if(!oldTeam.equals(newTeam)){
+            Intent intent = new Intent(this, add_to_roster.class);
+            startActivity(intent);
+        }
+
+
+    }
 
     }
 

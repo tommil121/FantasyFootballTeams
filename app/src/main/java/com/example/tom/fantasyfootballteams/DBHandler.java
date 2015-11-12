@@ -7,13 +7,15 @@ import android.database.sqlite.SQLiteDatabase;
 import java.sql.SQLClientInfoException;
 import android.database.sqlite.SQLiteDatabaseLockedException;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 /**
  * Created by Tom on 10/31/2015.
  */
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATA_VERSION = 7;
+    private static final int DATA_VERSION = 8;
     private static final String DATABASE_NAME = "team.db";
 
     private static final String TABLE_TEAM = "team";
@@ -284,13 +286,16 @@ public class DBHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = getWritableDatabase();
 
         String query = "";
+        //qb = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "QB");
 
         if(andWhere == null)
             query = "SELECT * FROM " + TABLE_PLAYER + " WHERE " + where + operator + "\"" + condition + "\"" +  ";";
-        else
+        else {
             query = "SELECT * FROM " + TABLE_PLAYER + " WHERE " + where + operator + "\"" + condition + "\"" +
-                    " AND " + andWhere + andOp + "\"" + andCond + "\""  + ";";
+                    " AND " + andWhere + andOp + "\"" + andCond + "\"" + ";";
+        }
 
+       Log.v("query", query);
 
         Cursor c = db.rawQuery(query, null);
 
