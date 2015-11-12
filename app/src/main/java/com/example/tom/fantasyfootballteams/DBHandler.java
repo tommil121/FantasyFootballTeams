@@ -163,6 +163,54 @@ public class DBHandler extends SQLiteOpenHelper {
         return teamData;
     }
 
+    //Select teams with a where statement
+    //Shouldn't need to be able to put any ints in because we are not using the PK as the FK, we are using the team_name
+    public Team [] getTeamsWhere (String where, String operator, String condition, String andWhere,
+                                  String andOp, String andCond ){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "";
+
+        if(andWhere == null)
+            query = "SELECT * FROM " + TABLE_TEAM + " WHERE " + where + operator + "\"" + condition + "\"" +  ";";
+        else
+            query = "SELECT * FROM " + TABLE_TEAM + " WHERE " + where + operator + "\"" + condition + "\"" +
+                    " AND " + andWhere + andOp + "\"" + andCond + "\""  + ";";
+
+
+        Cursor c = db.rawQuery(query, null);
+
+        int numTeams = c.getCount();
+
+        if (numTeams >= 1) {
+
+            teamData = new Team [numTeams];
+
+            int i = 0;
+
+            c.moveToFirst();
+
+            while (!c.isAfterLast()){
+
+                teamData[i] = new Team (c.getString(c.getColumnIndex("teamName")),
+                        c.getString(c.getColumnIndex("season")),
+                        c.getString(c.getColumnIndex("leagueName"))
+                );
+
+                teamData[i].setId(c.getInt(c.getColumnIndex("id")));
+
+                c.moveToNext();
+
+                i++;
+            }
+        }
+
+        db.close();
+
+        return teamData;
+    }
+
     //Add a row to the player table
     public void addPlayer(String playerName, String playerPosition, String playerTeam){
         ContentValues values = new ContentValues();
