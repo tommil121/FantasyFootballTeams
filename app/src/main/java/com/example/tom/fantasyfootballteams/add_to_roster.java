@@ -22,24 +22,29 @@ public class add_to_roster extends AppCompatActivity {
     Spinner wrSpinner;
     Spinner teSpinner;
     Spinner kSpinner;
+    Spinner dstSpinner;
 
     //declare dbhandler
     DBHandler dbHandler;
 
     //declare player arrays for getplayers return
+    Team [] teams;
     Player [] qb;
     Player [] rb;
     Player [] wr;
     Player [] te;
     Player [] k;
+    Player [] dst;
 
 
     //declare and initialize arraylists for use with adapter
+    ArrayList<String> teamList;
     ArrayList<String> qbList = new ArrayList<String>();
     ArrayList<String> rbList = new ArrayList<String>();
     ArrayList<String> wrList = new ArrayList<String>();
     ArrayList<String> teList = new ArrayList<String>();
     ArrayList<String> kList = new ArrayList<String>();
+    ArrayList<String> dstList = new ArrayList<String>();
 
 
 
@@ -70,9 +75,37 @@ public class add_to_roster extends AppCompatActivity {
         wrSpinner = (Spinner) findViewById(R.id.wr_spinner);
         teSpinner = (Spinner) findViewById(R.id.te_spinner);
         kSpinner = (Spinner) findViewById(R.id.k_spinner);
+        dstSpinner = (Spinner) findViewById(R.id.dst_spinner);
 
         dbHandler = new DBHandler(this, null);
 
+
+
+        //put all of the teams in an array of Team objects
+        teams = dbHandler.getTeams();
+
+        //declare and initialize an array list for strings
+        teamList = new ArrayList<String>();
+
+        if(teams == null) {
+            teams = new Team[1];
+            teams[0] = new Team("Please", " add a ", "team");
+        }
+        //go through the list of Team objects and extract the "list friendly" toString method and
+        //add them to the array list
+        for(int i = 0; i < teams.length; i++){
+            teamList.add(teams[i].toStringPlayer());
+        }
+
+        //create an adapter
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_spinner_item, teamList);
+
+        //set the adapter to fill the list
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+        //apply the adapter to the spinner
+        teamSpinner.setAdapter(adapter);
 
 
         //Create a listener to listen to when an item is selected
@@ -84,11 +117,12 @@ public class add_to_roster extends AppCompatActivity {
                 String team = teamSpinner.getItemAtPosition(position).toString();
 
                 //get players for each position
-                qb = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "TEAM_POSITION", "=", "QB");
-                rb = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "TEAM_POSITION", "=", "RB");
-                wr = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "TEAM_POSITION", "=", "WR");
-                te = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "TEAM_POSITION", "=", "TE");
-                k = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "TEAM_POSITION", "=", "K");
+                qb = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "QB");
+                rb = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "RB");
+                wr = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "WR");
+                te = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "TE");
+                k = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "K");
+                dst = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "DST");
 
 
                 //error checking
@@ -117,13 +151,18 @@ public class add_to_roster extends AppCompatActivity {
                     k[0] = new Player("You MUST add players to the selected team", "", "");
                 }
 
+                if(dst == null) {
+                    dst = new Player[1];
+                    dst[0] = new Player("You MUST add players to the selected team", "", "");
+                }
+
                 //get the players into their respective arrays
                 for(int i = 0; i < qb.length; i++){
                     qbList.add(qb[i].toString());
                 }
 
                 for(int i = 0; i < rb.length; i++){
-                    qbList.add(rb[i].toString());
+                    rbList.add(rb[i].toString());
                 }
 
                 for(int i = 0; i < wr.length; i++){
@@ -136,6 +175,10 @@ public class add_to_roster extends AppCompatActivity {
 
                 for(int i = 0; i < k.length; i++){
                     kList.add(k[i].toString());
+                }
+
+                for(int i = 0; i < dst.length; i++){
+                    dstList.add(dst[i].toString());
                 }
 
                 //Create adapters
@@ -154,18 +197,23 @@ public class add_to_roster extends AppCompatActivity {
                 ArrayAdapter<String> kAdapter = new ArrayAdapter<String>(
                         add_to_roster.this, android.R.layout.simple_spinner_item, kList);
 
+                ArrayAdapter<String> dstAdapter = new ArrayAdapter<String>(
+                        add_to_roster.this, android.R.layout.simple_spinner_item, dstList);
+
                 //set it to fill the dropdown
                 qbAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 rbAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 wrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 teAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                 kAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                dstAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
                 qbSpinner.setAdapter(qbAdapter);
                 rbSpinner.setAdapter(rbAdapter);
                 wrSpinner.setAdapter(wrAdapter);
                 teSpinner.setAdapter(teAdapter);
                 kSpinner.setAdapter(kAdapter);
+                dstSpinner.setAdapter(dstAdapter);
 
 
 

@@ -13,7 +13,7 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATA_VERSION = 6;
+    private static final int DATA_VERSION = 7;
     private static final String DATABASE_NAME = "team.db";
 
     private static final String TABLE_TEAM = "team";
@@ -27,9 +27,9 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String TABLE_PLAYER = "PLAYER";
     public static final String COLUMN_PLAYER_ID = "PLAYER_ID";
     public static final String COLUMN_PLAYER_NAME = "PLAYER_NAME";
-    public static final String COLUMN_PLAYER_POSITION = "POSITION";
+    public static final String COLUMN_PLAYER_POSITION = "PLAYER_POSITION";
     public static final String COLUMN_PLAYER_TEAM_NAME = "TEAM_NAME"; //NOT CHANGING THIS YET... WILL CHANGE THOUGH
-    public static final String COLUMN_PLAYER_BENCHED = "BENCHED";
+    public static final String COLUMN_PLAYER_BENCHED = "PLAYER_BENCHED";
 
     //create Roster table
     public static final String TABLE_ROSTER = "ROSTER";
