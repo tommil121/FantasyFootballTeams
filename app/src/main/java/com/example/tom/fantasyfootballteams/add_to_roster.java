@@ -74,6 +74,7 @@ public class add_to_roster extends AppCompatActivity {
         dbHandler = new DBHandler(this, null);
 
 
+
         //Create a listener to listen to when an item is selected
         teamSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> arg0, View v, int position, long id) {
@@ -139,19 +140,32 @@ public class add_to_roster extends AppCompatActivity {
 
                 //Create adapters
                 ArrayAdapter<String> qbAdapter = new ArrayAdapter<String>(
-                        this, android.R.layout.simple_spinner_item, qbList);
+                        add_to_roster.this, android.R.layout.simple_spinner_item, qbList);
 
                 ArrayAdapter<String> rbAdapter = new ArrayAdapter<String>(
-                        this, android.R.layout.simple_spinner_item, rbList);
+                        add_to_roster.this, android.R.layout.simple_spinner_item, rbList);
 
                 ArrayAdapter<String> wrAdapter = new ArrayAdapter<String>(
-                        this, android.R.layout.simple_spinner_item, wrList);
+                        add_to_roster.this, android.R.layout.simple_spinner_item, wrList);
 
                 ArrayAdapter<String> teAdapter = new ArrayAdapter<String>(
-                        this, android.R.layout.simple_spinner_item, teList);
+                        add_to_roster.this, android.R.layout.simple_spinner_item, teList);
 
                 ArrayAdapter<String> kAdapter = new ArrayAdapter<String>(
-                        this, android.R.layout.simple_spinner_item, kList);
+                        add_to_roster.this, android.R.layout.simple_spinner_item, kList);
+
+                //set it to fill the dropdown
+                qbAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                rbAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                wrAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                teAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                kAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+
+                qbSpinner.setAdapter(qbAdapter);
+                rbSpinner.setAdapter(rbAdapter);
+                wrSpinner.setAdapter(wrAdapter);
+                teSpinner.setAdapter(teAdapter);
+                kSpinner.setAdapter(kAdapter);
 
 
 
