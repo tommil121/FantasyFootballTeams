@@ -223,6 +223,7 @@ public class add_to_roster extends AppCompatActivity {
                 dstSpinner.setAdapter(dstAdapter);
 
 
+
                 goToPlayerResultsActivity(team);
 
             }

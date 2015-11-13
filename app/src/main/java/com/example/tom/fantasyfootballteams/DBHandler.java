@@ -326,6 +326,7 @@ public class DBHandler extends SQLiteOpenHelper {
         }
 
         db.close();
+        c.close();
 
         return playerData;
     }
