@@ -124,12 +124,12 @@ public class add_to_roster extends AppCompatActivity {
                 displayToast(team);
 
                 //get players for each position
-                qb = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "QB");
-                rb = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "RB");
-                wr = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "WR");
-                te = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "TE");
-                k = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "K");
-                dst = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "DST");
+                qb = dbHandler.getPlayersWhere(team, "PLAYER_POSITION", "=", "QB");
+                rb = dbHandler.getPlayersWhere(team, "PLAYER_POSITION", "=", "RB");
+                wr = dbHandler.getPlayersWhere(team, "PLAYER_POSITION", "=", "WR");
+                te = dbHandler.getPlayersWhere(team, "PLAYER_POSITION", "=", "TE");
+                k = dbHandler.getPlayersWhere(team, "PLAYER_POSITION", "=", "K");
+                dst = dbHandler.getPlayersWhere(team, "PLAYER_POSITION", "=", "DST");
 
 
                 //error checking

@@ -280,18 +280,21 @@ public class DBHandler extends SQLiteOpenHelper {
     }
 
     //retrieve rows from the player table
-    public Player [] getPlayersWhere (String where, String operator, String condition, String andWhere,
+    public Player [] getPlayersWhere (String condition, String andWhere,
                                       String andOp, String andCond ){
+
+        //clear the players
+        playerData = null;
 
         SQLiteDatabase db = getWritableDatabase();
 
         String query = "";
-        //qb = dbHandler.getPlayersWhere("TEAM_NAME", "=", team, "PLAYER_POSITION", "=", "QB");
+
 
         if(andWhere == null)
-            query = "SELECT * FROM " + TABLE_PLAYER + " WHERE " + where + operator + "\"" + condition + "\"" +  ";";
+            query = "SELECT * FROM " + TABLE_PLAYER + " WHERE " + "TEAM_NAME=\"" + condition + "\";";
         else {
-            query = "SELECT * FROM " + TABLE_PLAYER + " WHERE " + where + operator + "\"" + condition + "\"" +
+            query = "SELECT * FROM " + TABLE_PLAYER + " WHERE " + "TEAM_NAME=\"" + condition + "\"" +
                     " AND " + andWhere + andOp + "\"" + andCond + "\"" + ";";
         }
 
