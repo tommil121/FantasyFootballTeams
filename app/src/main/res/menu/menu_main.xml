@@ -23,5 +23,9 @@
             android:orderInCategory="5"
             app:showAsAction="never"
             android:title="Delete Player"/>
+        <item android:id="@+id/menu_add_to_roster"
+            android:orderInCategory="6"
+            app:showAsAction="never"
+            android:title="Add to Roster"/>
     </group>
 </menu>

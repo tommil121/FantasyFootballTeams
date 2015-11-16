@@ -90,6 +90,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 return true;
+            case R.id.menu_add_to_roster:
+
+                intent = new Intent(this, add_to_roster.class);
+                startActivity(intent);
+
+                return true;
 
         }
 
