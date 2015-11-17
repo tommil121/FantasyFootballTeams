@@ -25,6 +25,27 @@
         <item>K</item>
         <item>DST</item>
     </string-array>
+
+    <string-array name="weekSpinner_array">
+        <item>Week 1</item>
+        <item>Week 2</item>
+        <item>Week 3</item>
+        <item>Week 4</item>
+        <item>Week 5</item>
+        <item>Week 6</item>
+        <item>Week 7</item>
+        <item>Week 8</item>
+        <item>Week 9</item>
+        <item>Week 10</item>
+        <item>Week 11</item>
+        <item>Week 12</item>
+        <item>Week 13</item>
+        <item>Week 14</item>
+        <item>Week 15</item>
+        <item>Week 16</item>
+    </string-array>
+
+
     <string name="title_activity_team_results">TeamResultsActivity</string>
     <string name="view_your_team_button">View Teams</string>
     <string name="title_activity_player_results2">player_results2</string>
@@ -38,5 +59,6 @@
     <string name="title_activity_add_points">AddPointsActivity</string>
     <string name="team_text_view">Team</string>
     <string name="enter_player_points">Enter Player Points</string>
+    <string name = "week_selection_text_view"></string>
 
 </resources>

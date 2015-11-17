@@ -14,10 +14,14 @@ import java.util.ArrayList;
 
 public class TeamWeekActivity extends AppCompatActivity {
 
+    public int team_id;
+    public int weekNum;
+
     Intent intent;
 
     DBHandler dbHandler;
     Spinner teamNameSpinner;
+    Spinner weekSpinner;
 
     //For team spinner
     Team [] teams;
@@ -31,6 +35,7 @@ public class TeamWeekActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         teamNameSpinner = (Spinner)findViewById(R.id.select_team_spinner);
+        weekSpinner = (Spinner) findViewById(R.id.weekSpinner);
 
         dbHandler = new DBHandler(this, null);
 
@@ -56,6 +61,15 @@ public class TeamWeekActivity extends AppCompatActivity {
 
         //apply the adapter to the spinner
         teamNameSpinner.setAdapter(adapter);
+    }
+
+    public void goToRosterActivity(View view){
+
+        weekNum = weekSpinner.getSelectedItemPosition();
+        weekNum = weekNum + 1;
+        team_id = (int) teams[teamNameSpinner.getSelectedItemPosition()].getId();
+        intent = new Intent(this, add_to_roster.class);
+        startActivity(intent);
     }
 
 }

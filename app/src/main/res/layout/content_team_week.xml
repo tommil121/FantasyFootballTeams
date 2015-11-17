@@ -24,6 +24,36 @@
         android:layout_height="wrap_content"
         android:id="@+id/team_spinner"
         android:layout_below="@+id/teamSelectionTextView"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="51dp" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/week_selection_text_view"
+        android:id="@+id/weekTextView"
+        android:layout_below="@+id/team_spinner"
+        android:layout_alignLeft="@+id/teamSelectionTextView"
+        android:layout_alignStart="@+id/teamSelectionTextView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Your Roster"
+        android:id="@+id/goToAddPtsButton"
+        android:layout_below="@+id/weekSpinner"
+        android:layout_alignRight="@+id/teamSelectionTextView"
+        android:layout_alignEnd="@+id/teamSelectionTextView"
+        android:onClick="goToRosterActivity"
+        android:nestedScrollingEnabled="false" />
+
+    <Spinner
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/weekSpinner"
+        android:entries="@array/weekSpinner_array"
+        android:layout_below="@+id/weekTextView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
