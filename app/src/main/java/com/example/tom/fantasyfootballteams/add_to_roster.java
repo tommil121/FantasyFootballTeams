@@ -113,7 +113,7 @@ public class add_to_roster extends AppCompatActivity {
 
 
         //THIS LISTENER WILL BECOME USELESS. The week will be selected via a button. The select team
-        //     is insignificant
+        //     is insignifcant
         //Create a listener to listen to when an item is selected
         teamSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> arg0, View v, int position, long id) {
@@ -261,6 +261,11 @@ public class add_to_roster extends AppCompatActivity {
 
     }
 
+    public void addToRoster(){
+
     }
+
+
+}
 
 

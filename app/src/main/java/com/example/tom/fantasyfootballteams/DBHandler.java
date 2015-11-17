@@ -15,7 +15,7 @@ import android.widget.Toast;
  */
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATA_VERSION = 8;
+    private static final int DATA_VERSION = 10;
     private static final String DATABASE_NAME = "team.db";
 
     private static final String TABLE_TEAM = "team";
@@ -66,7 +66,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 COLUMN_PLAYER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 COLUMN_PLAYER_NAME + " TEXT, " +
                 COLUMN_PLAYER_POSITION + " TEXT, " +
-                COLUMN_PLAYER_TEAM_NAME + " TEXT " +
+                COLUMN_PLAYER_TEAM_NAME + " TEXT, " +
                 COLUMN_PLAYER_BENCHED + " INTEGER DEFAULT 1 " +
                 ");"; //DEFAULT IS TRUE
 
@@ -75,8 +75,8 @@ public class DBHandler extends SQLiteOpenHelper {
         //create Roster table
         query = "CREATE TABLE " + TABLE_ROSTER + "(" +
                 COLUMN_ROSTER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_ROSTER_PLAYER_ID + " INTEGER " +
-                COLUMN_ROSTER_WEEK + " INTEGER " +
+                COLUMN_ROSTER_PLAYER_ID + " INTEGER, " +
+                COLUMN_ROSTER_WEEK + " INTEGER, " +
                 COLUMN_ROSTER_PTS + " INTEGER " +
                 ");"; //pts will only include the whole number. If rounding is necessary, we will take care of that
                         //in the java of the add points page
@@ -332,6 +332,10 @@ public class DBHandler extends SQLiteOpenHelper {
         c.close();
 
         return playerData;
+    }
+
+    public void addToRoster(){
+
     }
 
 }

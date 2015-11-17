@@ -19,8 +19,9 @@ public class AddPointsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_add_points);
 
         Team fakeTeam = new Team("Fake", "2014", "NFC");
+
         teamName = fakeTeam.getTeamName();
-        team = (TextView)findViewById(R.id.teamTextView);
+        team = (TextView) findViewById(R.id.teamTV);
         team.setText(teamName);
 
 

@@ -114,6 +114,13 @@
             android:layout_height="wrap_content"
             android:id="@+id/dst_spinner"
             android:gravity="fill_horizontal" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Players"
+            android:id="@+id/addToRosterButton"
+            android:onClick="addToRoster()" />
     </LinearLayout>
 
 </RelativeLayout>
