@@ -21,7 +21,7 @@ public class AddPointsActivity extends AppCompatActivity {
         Team fakeTeam = new Team("Fake", "2014", "NFC");
         teamName = fakeTeam.getTeamName();
         team = (TextView)findViewById(R.id.teamTextView);
-        //team.setText(teamName);
+        team.setText(teamName);
 
 
 

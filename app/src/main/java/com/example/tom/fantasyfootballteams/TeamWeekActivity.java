@@ -34,7 +34,7 @@ public class TeamWeekActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        teamNameSpinner = (Spinner)findViewById(R.id.select_team_spinner);
+        teamNameSpinner = (Spinner)findViewById(R.id.team_spinner);
         weekSpinner = (Spinner) findViewById(R.id.weekSpinner);
 
         dbHandler = new DBHandler(this, null);
@@ -56,6 +56,7 @@ public class TeamWeekActivity extends AppCompatActivity {
         for(int i = 0; i < teams.length; i++){
             teamList.add(teams[i].toStringPlayer());
         }
+
 
         //create an adapter
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(

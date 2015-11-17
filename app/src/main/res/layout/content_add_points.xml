@@ -71,9 +71,10 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/editText"
                 android:layout_column="4"
-                android:visibility="invisible"
+                android:visibility="visible"
                 android:hint="0"
-                android:gravity="fill_horizontal" />
+                android:gravity="fill_horizontal"
+                android:width="100dp" />
         </TableRow>
 
         <TableRow
