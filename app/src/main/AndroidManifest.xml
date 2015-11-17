@@ -55,6 +55,11 @@
             android:label="@string/title_activity_team_week"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity
+            android:name=".AddPointsActivity"
+            android:label="@string/title_activity_add_points"
+            android:theme="@style/AppTheme.NoActionBar" >
+        </activity>
     </application>
 
 </manifest>

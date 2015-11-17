@@ -35,5 +35,8 @@
     <string name="title_activity_add_to_roster">add_to_roster</string>
     <string name="title_activity_team_week">TeamWeekActivity</string>
     <string name="team_selection">Team Selection</string>
+    <string name="title_activity_add_points">AddPointsActivity</string>
+    <string name="team_text_view">Team</string>
+    <string name="enter_player_points">Enter Player Points</string>
 
 </resources>
