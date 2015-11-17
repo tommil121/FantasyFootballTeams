@@ -112,6 +112,8 @@ public class add_to_roster extends AppCompatActivity {
         teamSpinner.setAdapter(adapter);
 
 
+        //THIS LISTENER WILL BECOME USELESS. The week will be selected via a button. The select team
+        //     is insignificant
         //Create a listener to listen to when an item is selected
         teamSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             public void onItemSelected(AdapterView<?> arg0, View v, int position, long id) {
@@ -224,6 +226,8 @@ public class add_to_roster extends AppCompatActivity {
 
 
 
+
+
                 goToPlayerResultsActivity(team);
 
             }
@@ -251,6 +255,7 @@ public class add_to_roster extends AppCompatActivity {
         if(!oldTeam.equals(newTeam)){
             Intent intent = new Intent(this, add_to_roster.class);
             startActivity(intent);
+
         }
 
 
