@@ -18,6 +18,7 @@ public class AddPointsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_points);
 
+        //fakeTeam eventually becomes return from roster table
         Team fakeTeam = new Team("Fake", "2014", "NFC");
         teamName = fakeTeam.getTeamName();
         team = (TextView)findViewById(R.id.teamTextView);

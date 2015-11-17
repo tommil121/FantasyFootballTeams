@@ -14,7 +14,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Add Player Points"
+        android:text="Enter Player Points"
         android:id="@+id/textView4"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
@@ -44,6 +44,14 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:id="@+id/teamTextView"
                 android:layout_column="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Week"
+                android:id="@+id/weekTextView"
+                android:layout_column="17" />
         </TableRow>
 
         <TableRow
@@ -69,12 +77,21 @@
             <EditText
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/editText"
-                android:layout_column="4"
+                android:id="@+id/QBPts"
+                android:layout_column="17"
                 android:visibility="visible"
-                android:hint="0"
+                android:hint="  0"
                 android:gravity="fill_horizontal"
-                android:width="100dp" />
+                android:width="30dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Pts"
+                android:id="@+id/ptsTextView"
+                android:layout_column="18" />
+
         </TableRow>
 
         <TableRow
@@ -96,6 +113,21 @@
                 android:text="RBName"
                 android:id="@+id/rbTextView"
                 android:layout_column="2" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_column="17"
+                android:id="@+id/RBPts"
+                android:hint="  0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Pts"
+                android:id="@+id/textView8"
+                android:layout_column="18" />
         </TableRow>
 
         <TableRow
@@ -117,6 +149,22 @@
                 android:text="WR Name"
                 android:id="@+id/wrTextView"
                 android:layout_column="2" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/WRPts"
+                android:layout_column="17"
+                android:hint="  0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Pts"
+                android:id="@+id/textView9"
+                android:layout_column="18" />
+
         </TableRow>
 
         <TableRow
@@ -138,6 +186,21 @@
                 android:text="TEName"
                 android:id="@+id/teTextView"
                 android:layout_column="2" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/TEPts"
+                android:layout_column="17"
+                android:hint="  0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Pts"
+                android:id="@+id/textView10"
+                android:layout_column="18" />
         </TableRow>
 
         <TableRow
@@ -159,6 +222,21 @@
                 android:text="DSTName"
                 android:id="@+id/dstTextView"
                 android:layout_column="2" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/DSTPts"
+                android:layout_column="17"
+                android:hint="  0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Pts"
+                android:id="@+id/textView11"
+                android:layout_column="18" />
         </TableRow>
 
         <TableRow
@@ -179,6 +257,76 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="KName"
                 android:id="@+id/kTextView"
+                android:layout_column="2" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/KPts"
+                android:layout_column="17"
+                android:hint="  0" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Pts"
+                android:id="@+id/textView12"
+                android:layout_column="18" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Total Pts"
+                android:id="@+id/textView13"
+                android:layout_column="2" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="Total"
+                android:id="@+id/totalPtsHolder"
+                android:layout_column="17" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"></TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Points"
+                android:id="@+id/submitPtsButton"
                 android:layout_column="2" />
         </TableRow>
     </TableLayout>

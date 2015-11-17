@@ -338,4 +338,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
     }
 
+    //Dont forget to change Player_ID to Player_Name
+    public Roster[] getRosterPosition(String teamName, int weekNum, String playerPos){
+
+        return null;
+
+    }
+
 }

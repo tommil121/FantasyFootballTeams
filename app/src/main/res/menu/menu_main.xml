@@ -26,7 +26,7 @@
         <item android:id="@+id/menu_add_to_roster"
             android:orderInCategory="6"
             app:showAsAction="never"
-            android:title="Add Points"/>
+            android:title="Add Players to Weekly Roster"/>
         <item android:id="@+id/menu_add_points"
             android:orderInCategory="7"
             app:showAsAction="never"
