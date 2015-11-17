@@ -48,6 +48,11 @@ public class TeamWeekActivity extends AppCompatActivity {
 
         //go through the list of Team objects and extract the "list friendly" toString method and
         //add them to the array list
+        if (teams == null){
+            teams = new Team[1];
+            teams[0] = new Team("Please add a team!","","");
+        }
+
         for(int i = 0; i < teams.length; i++){
             teamList.add(teams[i].toStringPlayer());
         }
