@@ -26,6 +26,14 @@
         <item android:id="@+id/menu_add_to_roster"
             android:orderInCategory="6"
             app:showAsAction="never"
-            android:title="Add to Roster"/>
+            android:title="Add Points"/>
+        <item android:id="@+id/menu_add_points"
+            android:orderInCategory="7"
+            app:showAsAction="never"
+            android:title="Add Points"/>
+        <item android:id="@+id/menu_team_week_activity"
+            android:orderInCategory="8"
+            app:showAsAction="never"
+            android:title="Select Team and Week"/>
     </group>
 </menu>

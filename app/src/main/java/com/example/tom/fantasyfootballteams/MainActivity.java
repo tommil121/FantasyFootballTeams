@@ -96,7 +96,18 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 return true;
+            case R.id.menu_add_points:
 
+                intent = new Intent(this, AddPointsActivity.class);
+                startActivity(intent);
+
+                return true;
+            case R.id.menu_team_week_activity:
+
+                intent = new Intent(this, TeamWeekActivity.class);
+                startActivity(intent);
+
+                return true;
         }
 
         return super.onOptionsItemSelected(item);
