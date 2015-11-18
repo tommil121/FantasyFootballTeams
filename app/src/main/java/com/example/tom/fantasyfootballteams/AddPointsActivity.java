@@ -14,16 +14,22 @@ public class AddPointsActivity extends AppCompatActivity {
 
     TextView team;
     String teamName;
+
     TextView qb;
     String qbName;
+
     TextView rb;
     String rbName;
+
     TextView wr;
     String wrName;
+
     TextView te;
     String teName;
+
     TextView k;
     String kName;
+
     TextView dst;
     String dstName;
 

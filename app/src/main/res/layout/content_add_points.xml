@@ -52,7 +52,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Week"
                 android:id="@+id/weekTextView"
-                android:layout_column="18" />
+                android:layout_column="17" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -60,7 +60,7 @@
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Num"
                 android:id="@+id/weekNumTextView"
-                android:layout_column="19" />
+                android:layout_column="18" />
 
         </TableRow>
 
@@ -99,7 +99,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Pts"
-                android:id="@+id/ptsTextView"
+                android:id="@+id/qbPtsTextView"
                 android:layout_column="18" />
 
         </TableRow>
@@ -137,7 +137,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Pts"
-                android:id="@+id/textView8"
+                android:id="@+id/rbPtsTextView"
                 android:layout_column="18" />
         </TableRow>
 
@@ -174,7 +174,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Pts"
-                android:id="@+id/textView9"
+                android:id="@+id/wrPtsTextView"
                 android:layout_column="18" />
 
         </TableRow>
@@ -212,7 +212,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Pts"
-                android:id="@+id/textView10"
+                android:id="@+id/tePtsTextView"
                 android:layout_column="18" />
         </TableRow>
 
@@ -249,7 +249,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Pts"
-                android:id="@+id/textView11"
+                android:id="@+id/dstPtsTextView"
                 android:layout_column="18" />
         </TableRow>
 
@@ -286,7 +286,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Pts"
-                android:id="@+id/textView12"
+                android:id="@+id/kPtsTextView"
                 android:layout_column="18" />
         </TableRow>
 
@@ -322,7 +322,7 @@
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:text="Pts"
-                android:id="@+id/textView13"
+                android:id="@+id/tPtsTextView"
                 android:layout_column="18" />
 
         </TableRow>
