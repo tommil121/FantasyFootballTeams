@@ -15,6 +15,8 @@ public class AddPointsActivity extends AppCompatActivity {
     TextView team;
     String teamName;
 
+    TextView weekNum;
+
     TextView qb;
     String qbName;
 
@@ -41,18 +43,22 @@ public class AddPointsActivity extends AppCompatActivity {
         //fakeTeam eventually becomes return from roster table
         Team maury = new Team("Maury", "2015", "NFC");
         teamName = maury.getTeamName();
-        team = (TextView)findViewById(R.id.teamTextView);
+        team = (TextView) findViewById(R.id.teamTextView);
         team.setText(teamName);
 
-        //added dummy data to check ui
+        //fake week num
+        weekNum = (TextView) findViewById(R.id.weekNumTextView);
+        weekNum.setText("1");
+
+        //added dummy PLAYER data to check ui
         Player qbPlayer = new Player("Maury Povich", "Maury", "QB");
         qbName = qbPlayer.getName();
-        qb = (TextView)findViewById(R.id.qbTextView);
+        qb = (TextView) findViewById(R.id.qbTextView);
         qb.setText(qbName);
 
         Player rbPlayer = new Player("Jerry Springer", "Maury", "RB");
         rbName = rbPlayer.getName();
-        rb = (TextView)findViewById(R.id.rbTextView);
+        rb = (TextView) findViewById(R.id.rbTextView);
         rb.setText(rbName);
 
         Player wrPlayer = new Player("Steve Wilkos", "Maury", "WR");
@@ -62,7 +68,7 @@ public class AddPointsActivity extends AppCompatActivity {
 
         Player tePlayer = new Player("Montell Williams", "Maury", "TE");
         teName = tePlayer.getName();
-        te = (TextView)findViewById(R.id.teTextView);
+        te = (TextView) findViewById(R.id.teTextView);
         te.setText(teName);
 
         Player kPlayer = new Player("Oprah", "Maury", "K");
@@ -79,7 +85,6 @@ public class AddPointsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
 
-
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +93,43 @@ public class AddPointsActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+    }
+
+    public void calcPoints(View view) {
+
+        TextView qb, rb, wr, te, k, dst, total;
+
+        int qbPts, rbPts, wrPts, tePts, kPts, dstPts;
+        int total_pts = 0;
+
+        String totalStr;
+
+        qb = (TextView) findViewById(R.id.QBPts);
+        qbPts = Integer.parseInt(qb.getText().toString());
+
+        rb = (TextView) findViewById(R.id.RBPts);
+        rbPts = Integer.parseInt(rb.getText().toString());
+
+        wr = (TextView) findViewById(R.id.WRPts);
+        wrPts = Integer.parseInt(wr.getText().toString());
+
+        te = (TextView) findViewById(R.id.TEPts);
+        tePts = Integer.parseInt(te.getText().toString());
+
+        k = (TextView) findViewById(R.id.KPts);
+        kPts = Integer.parseInt(k.getText().toString());
+
+        dst = (TextView) findViewById(R.id.DSTPts);
+        dstPts = Integer.parseInt(dst.getText().toString());
+
+        total_pts = (qbPts + rbPts + wrPts + tePts + kPts + dstPts);
+        total = (TextView)findViewById(R.id.totalTextView);
+
+        //code below ""+ takes the integer value from the int and converts it to
+        //String so that it can be placed in the editText box
+        //Does the same as String.valueOf(total_pts)
+        total.setText(""+total_pts);
+
     }
 
 }

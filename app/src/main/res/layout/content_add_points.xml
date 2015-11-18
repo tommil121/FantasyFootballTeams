@@ -50,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textAppearance="?android:attr/textAppearanceMedium"
-                android:text="Week"
+                android:text="Week "
                 android:id="@+id/weekTextView"
                 android:layout_column="17" />
 
@@ -299,7 +299,8 @@
                 android:layout_height="wrap_content"
                 android:text="Submit"
                 android:id="@+id/submitPtsButton"
-                android:layout_column="0" />
+                android:layout_column="0"
+                android:onClick="calcPoints" />
 
             <TextView
                 android:layout_width="wrap_content"
