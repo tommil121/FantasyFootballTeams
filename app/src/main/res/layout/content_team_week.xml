@@ -17,15 +17,16 @@
         android:text="@string/team_selection"
         android:id="@+id/teamSelectionTextView"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <Spinner
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/team_spinner"
         android:layout_below="@+id/teamSelectionTextView"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="false"
+        android:layout_centerHorizontal="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -40,13 +41,12 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Select Your Roster"
+        android:text="@string/team_week_submit_button"
         android:id="@+id/goToAddPtsButton"
-        android:layout_below="@+id/weekSpinner"
-        android:layout_alignRight="@+id/teamSelectionTextView"
-        android:layout_alignEnd="@+id/teamSelectionTextView"
         android:onClick="goToRosterActivity"
-        android:nestedScrollingEnabled="false" />
+        android:nestedScrollingEnabled="false"
+        android:layout_below="@+id/weekSpinner"
+        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -54,6 +54,16 @@
         android:id="@+id/weekSpinner"
         android:entries="@array/weekSpinner_array"
         android:layout_below="@+id/weekTextView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="false"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="@string/week_selection"
+        android:id="@+id/weekSelectionTextView"
+        android:layout_below="@+id/team_spinner"
+        android:layout_toRightOf="@+id/weekTextView"
+        android:layout_toEndOf="@+id/weekTextView" />
 </RelativeLayout>

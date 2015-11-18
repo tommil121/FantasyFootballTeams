@@ -60,5 +60,7 @@
     <string name="team_text_view">Team</string>
     <string name="enter_player_points">Enter Player Points</string>
     <string name = "week_selection_text_view"></string>
+    <string name="week_selection">Week Selection</string>
+    <string name="team_week_submit_button">Submit</string>
 
 </resources>
