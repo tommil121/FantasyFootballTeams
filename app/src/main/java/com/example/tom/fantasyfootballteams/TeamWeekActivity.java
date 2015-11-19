@@ -14,8 +14,8 @@ import java.util.ArrayList;
 
 public class TeamWeekActivity extends AppCompatActivity {
 
-    public int team_id;
-    public int weekNum;
+    public static String team_name;
+    public static int weekNum;
 
     Intent intent;
 
@@ -73,7 +73,10 @@ public class TeamWeekActivity extends AppCompatActivity {
 
         weekNum = weekSpinner.getSelectedItemPosition();
         weekNum = weekNum + 1;
-        team_id = (int) teams[teamNameSpinner.getSelectedItemPosition()].getId();
+        team_name =  teams[teamNameSpinner.getSelectedItemPosition()].getTeamName();
+
+
+
         intent = new Intent(this, add_to_roster.class);
         startActivity(intent);
     }

@@ -15,7 +15,7 @@ import android.widget.Toast;
  */
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATA_VERSION = 10;
+    private static final int DATA_VERSION = 11;
     private static final String DATABASE_NAME = "team.db";
 
     private static final String TABLE_TEAM = "team";
@@ -36,12 +36,14 @@ public class DBHandler extends SQLiteOpenHelper {
     //create Roster table
     public static final String TABLE_ROSTER = "ROSTER";
     public static final String COLUMN_ROSTER_ID = "ROSTER_ID";
-    public static final String COLUMN_ROSTER_PLAYER_ID = "PLAYER_ID";
+    public static final String COLUMN_ROSTER_PLAYER_NAME = "PLAYER_NAME";
+    public static final String COLUMN_ROSTER_PLAYER_POSITION = "PLAYER_POSITION";
     public static final String COLUMN_ROSTER_WEEK = "ROSTER_WEEK";
     public static final String COLUMN_ROSTER_PTS = "ROSTER_PTS";
 
     private Team [] teamData;
     private Player [] playerData;
+    private Roster [] rosterData;
 
     public DBHandler(Context context, SQLiteDatabase.CursorFactory factory) {
         super(context, DATABASE_NAME, factory, DATA_VERSION);
@@ -75,7 +77,8 @@ public class DBHandler extends SQLiteOpenHelper {
         //create Roster table
         query = "CREATE TABLE " + TABLE_ROSTER + "(" +
                 COLUMN_ROSTER_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                COLUMN_ROSTER_PLAYER_ID + " INTEGER, " +
+                COLUMN_ROSTER_PLAYER_NAME + " TEXT, " +
+                COLUMN_ROSTER_PLAYER_POSITION + " TEXT, " +
                 COLUMN_ROSTER_WEEK + " INTEGER, " +
                 COLUMN_ROSTER_PTS + " INTEGER " +
                 ");"; //pts will only include the whole number. If rounding is necessary, we will take care of that
@@ -279,6 +282,46 @@ public class DBHandler extends SQLiteOpenHelper {
         return playerData;
     }
 
+    //retrieve a single row from the player table
+    public Player getPlayer(String playerName, String team){
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_PLAYER +" WHERE " + COLUMN_PLAYER_NAME + " = \"" + playerName + "\" AND " +
+                COLUMN_PLAYER_TEAM_NAME + "=\"" + team + "\" AND " + COLUMN_PLAYER_BENCHED + "= 0" +";";
+
+        Cursor c = db.rawQuery(query, null);
+
+        int numPlayers = c.getCount();
+
+        if (numPlayers >= 1) {
+
+            playerData = new Player [numPlayers];
+
+            int i = 0;
+
+            c.moveToFirst();
+
+            while (!c.isAfterLast()){
+
+                playerData[i] = new Player (c.getString(c.getColumnIndex(COLUMN_PLAYER_NAME)),
+                        c.getString(c.getColumnIndex(COLUMN_PLAYER_POSITION)),
+                        c.getString(c.getColumnIndex(COLUMN_PLAYER_TEAM_NAME))
+
+                );
+
+                playerData[i].setId(c.getInt(c.getColumnIndex(COLUMN_PLAYER_ID)));
+
+                c.moveToNext();
+
+                i++;
+            }
+        }
+
+        db.close();
+
+        return playerData[0];
+    }
+
     //retrieve rows from the player table
     public Player [] getPlayersWhere (String condition, String andWhere,
                                       String andOp, String andCond ){
@@ -334,14 +377,69 @@ public class DBHandler extends SQLiteOpenHelper {
         return playerData;
     }
 
-    public void addToRoster(){
+    public void addToRoster(String playerName, String teamName, int week){
+
+        //inserting column name and value
+        ContentValues values = new ContentValues();
+
+        Player player = getPlayer(playerName, teamName);
+
+        //getting the player name and week from the user
+        values.put(COLUMN_ROSTER_PLAYER_NAME, playerName);
+        values.put(COLUMN_ROSTER_PLAYER_POSITION, player.getPositionName());
+        values.put(COLUMN_ROSTER_WEEK, week);
+
+        //hardcoding zero in the pts column
+        values.put(COLUMN_ROSTER_PTS, 0);
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        db.insert(TABLE_ROSTER, null, values);
+
+        db.close();
 
     }
 
-    //Dont forget to change Player_ID to Player_Name
-    public Roster[] getRosterPosition(String teamName, int weekNum, String playerPos){
 
-        return null;
+    //get the Roster players for the add points page
+    public Roster[] getRosterPosition(String teamName, int weekNum, String playerPos){
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_ROSTER +" WHERE " + COLUMN_ROSTER_PLAYER_NAME + " = \"" + teamName + "\" AND " +
+                COLUMN_ROSTER_WEEK + "=" + weekNum + " AND " + COLUMN_ROSTER_PLAYER_POSITION + " = " + playerPos +";";
+
+        Cursor c = db.rawQuery(query, null);
+
+        int numPlayers = c.getCount();
+
+        if (numPlayers >= 1) {
+
+            playerData = new Player [numPlayers];
+
+            int i = 0;
+
+            c.moveToFirst();
+
+            while (!c.isAfterLast()){
+
+                playerData[i] = new Player (c.getString(c.getColumnIndex(COLUMN_PLAYER_NAME)),
+                        c.getString(c.getColumnIndex(COLUMN_PLAYER_POSITION)),
+                        c.getString(c.getColumnIndex(COLUMN_PLAYER_TEAM_NAME))
+
+                );
+
+                playerData[i].setId(c.getInt(c.getColumnIndex(COLUMN_PLAYER_ID)));
+
+                c.moveToNext();
+
+                i++;
+            }
+        }
+
+        db.close();
+
+        return rosterData;
+
 
     }
 

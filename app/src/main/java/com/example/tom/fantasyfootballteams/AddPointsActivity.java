@@ -135,7 +135,7 @@ public class AddPointsActivity extends AppCompatActivity {
         //code below ""+ takes the integer value from the int and converts it to
         //String so that it can be placed in the editText box
         //Does the same as String.valueOf(total_pts)
-        total.setText(""+total_pts);
+        total.setText("" + total_pts);
 
     }
 
