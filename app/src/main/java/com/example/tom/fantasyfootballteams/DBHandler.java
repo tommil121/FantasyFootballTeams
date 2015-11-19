@@ -15,7 +15,7 @@ import android.widget.Toast;
  */
 public class DBHandler extends SQLiteOpenHelper {
 
-    private static final int DATA_VERSION = 11;
+    private static final int DATA_VERSION = 12;
     private static final String DATABASE_NAME = "team.db";
 
     private static final String TABLE_TEAM = "team";
@@ -38,6 +38,7 @@ public class DBHandler extends SQLiteOpenHelper {
     public static final String COLUMN_ROSTER_ID = "ROSTER_ID";
     public static final String COLUMN_ROSTER_PLAYER_NAME = "PLAYER_NAME";
     public static final String COLUMN_ROSTER_PLAYER_POSITION = "PLAYER_POSITION";
+    public static final String COLUMN_ROSTER_PLAYER_TEAM_NAME = "TEAM_NAME";
     public static final String COLUMN_ROSTER_WEEK = "ROSTER_WEEK";
     public static final String COLUMN_ROSTER_PTS = "ROSTER_PTS";
 
@@ -387,6 +388,7 @@ public class DBHandler extends SQLiteOpenHelper {
         //getting the player name and week from the user
         values.put(COLUMN_ROSTER_PLAYER_NAME, playerName);
         values.put(COLUMN_ROSTER_PLAYER_POSITION, player.getPositionName());
+        values.put(COLUMN_ROSTER_PLAYER_TEAM_NAME, player.getTeamName());
         values.put(COLUMN_ROSTER_WEEK, week);
 
         //hardcoding zero in the pts column
@@ -410,11 +412,11 @@ public class DBHandler extends SQLiteOpenHelper {
 
         Cursor c = db.rawQuery(query, null);
 
-        int numPlayers = c.getCount();
+        int numRosterPlayers = c.getCount();
 
-        if (numPlayers >= 1) {
+        if (numRosterPlayers >= 1) {
 
-            playerData = new Player [numPlayers];
+            rosterData = new Roster [numRosterPlayers];
 
             int i = 0;
 
@@ -422,13 +424,15 @@ public class DBHandler extends SQLiteOpenHelper {
 
             while (!c.isAfterLast()){
 
-                playerData[i] = new Player (c.getString(c.getColumnIndex(COLUMN_PLAYER_NAME)),
-                        c.getString(c.getColumnIndex(COLUMN_PLAYER_POSITION)),
-                        c.getString(c.getColumnIndex(COLUMN_PLAYER_TEAM_NAME))
+                rosterData[i] = new Roster (c.getString(c.getColumnIndex(COLUMN_ROSTER_PLAYER_NAME)),
+                                c.getString(c.getColumnIndex(COLUMN_ROSTER_PLAYER_POSITION)),
+                                c.getString(c.getColumnIndex(COLUMN_ROSTER_PLAYER_TEAM_NAME)),
+                                c.getInt(c.getColumnIndex(COLUMN_ROSTER_WEEK)),
+                                c.getInt(c.getColumnIndex(COLUMN_ROSTER_PTS))
 
                 );
 
-                playerData[i].setId(c.getInt(c.getColumnIndex(COLUMN_PLAYER_ID)));
+                rosterData[i].setRosterId(c.getInt(c.getColumnIndex(COLUMN_ROSTER_ID)));
 
                 c.moveToNext();
 

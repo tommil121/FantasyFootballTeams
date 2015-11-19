@@ -6,15 +6,25 @@ package com.example.tom.fantasyfootballteams;
 public class Roster {
     private int rosterId;
     private String playerName;
+    private String playerPosition;
     private String teamName;
     private int week;
     private int pts;
 
-    public Roster(String playerName, String teamName, int week, int pts) {
+    public Roster(String playerName, String playerPostion, String teamName, int week, int pts) {
         this.playerName = playerName;
+        this.playerPosition = playerPostion;
         this.teamName = teamName;
         this.week = week;
         this.pts = pts;
+    }
+
+    public String getPlayerPosition() {
+        return playerPosition;
+    }
+
+    public void setPlayerPosition(String playerPosition) {
+        this.playerPosition = playerPosition;
     }
 
     public int getRosterId() {

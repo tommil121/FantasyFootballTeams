@@ -242,7 +242,7 @@ public class add_to_roster extends AppCompatActivity {
             dbHandler.addToRoster((String) kSpinner.getSelectedItem(), team, week);
             dbHandler.addToRoster((String) dstSpinner.getSelectedItem(), team, week);
 
-            Toast.makeText(this, ("You have successfully filled your roster for week" + week),
+            Toast.makeText(this, ("You have successfully filled your roster for week " + week),
                     Toast.LENGTH_LONG).show();
 
         }
