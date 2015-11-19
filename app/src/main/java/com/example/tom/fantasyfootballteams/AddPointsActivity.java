@@ -95,16 +95,21 @@ public class AddPointsActivity extends AppCompatActivity {
         });
     }
 
+    //OnClick of submit button, get the user submitted points
+    //for each of the 6 players and sum them, then display this sum on screen
     public void calcPoints(View view) {
 
+        //create TextView variables
         TextView qb, rb, wr, te, k, dst, total;
 
+        //create int variables which will be totaled
         int qbPts, rbPts, wrPts, tePts, kPts, dstPts;
+        //set int total_pts to 0
         int total_pts = 0;
 
-        String totalStr;
-
+        //set TextView var qb to equal the text in QBPts editText input
         qb = (TextView) findViewById(R.id.QBPts);
+        //convert the string value in qb to integer, store it in int var qbPts
         qbPts = Integer.parseInt(qb.getText().toString());
 
         rb = (TextView) findViewById(R.id.RBPts);
@@ -122,7 +127,9 @@ public class AddPointsActivity extends AppCompatActivity {
         dst = (TextView) findViewById(R.id.DSTPts);
         dstPts = Integer.parseInt(dst.getText().toString());
 
+        //sum the integer values, store in int var total_pts
         total_pts = (qbPts + rbPts + wrPts + tePts + kPts + dstPts);
+        //set TextView var total to equal totalTextView text box
         total = (TextView)findViewById(R.id.totalTextView);
 
         //code below ""+ takes the integer value from the int and converts it to
