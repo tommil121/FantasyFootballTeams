@@ -62,5 +62,7 @@
     <string name = "week_selection_text_view"></string>
     <string name="week_selection">Week Selection</string>
     <string name="team_week_submit_button">Submit</string>
+    <string name="set_this_weeks_points_button">Set this week\'s Points</string>
+    <string name="set_this_weeks_roster_button">Set this Week\'s Roster</string>
 
 </resources>

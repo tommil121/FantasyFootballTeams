@@ -81,4 +81,16 @@ public class TeamWeekActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToAddPointsActivity(View view){
+
+        weekNum = weekSpinner.getSelectedItemPosition();
+        weekNum = weekNum + 1;
+        team_name =  teams[teamNameSpinner.getSelectedItemPosition()].getTeamName();
+
+
+
+        intent = new Intent(this, AddPointsActivity.class);
+        startActivity(intent);
+    }
+
 }

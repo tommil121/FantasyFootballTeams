@@ -17,8 +17,7 @@
         android:text="@string/team_selection"
         android:id="@+id/teamSelectionTextView"
         android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_centerHorizontal="true" />
 
     <Spinner
         android:layout_width="wrap_content"
@@ -41,11 +40,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/team_week_submit_button"
+        android:text="@string/set_this_weeks_roster_button"
         android:id="@+id/goToAddPtsButton"
         android:onClick="goToRosterActivity"
         android:nestedScrollingEnabled="false"
-        android:layout_below="@+id/weekSpinner"
+        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true" />
 
     <Spinner
@@ -66,4 +65,14 @@
         android:layout_below="@+id/team_spinner"
         android:layout_toRightOf="@+id/weekTextView"
         android:layout_toEndOf="@+id/weekTextView" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/goToSetPointsButton"
+        android:text="@string/set_this_weeks_points_button"
+        android:onClick="goToAddPointsActivity"
+        android:layout_below="@+id/goToAddPtsButton"
+        android:layout_alignRight="@+id/goToAddPtsButton"
+        android:layout_alignEnd="@+id/goToAddPtsButton" />
 </RelativeLayout>
