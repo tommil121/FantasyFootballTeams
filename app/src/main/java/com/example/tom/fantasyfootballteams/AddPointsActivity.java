@@ -34,15 +34,17 @@ public class AddPointsActivity extends AppCompatActivity {
 
         DBHandler db = new DBHandler(this, null);
 
+        teamName = TeamWeekActivity.team_name;
+        week_num = TeamWeekActivity.weekNum;
 
         //NOT FILLING FOR SOME REASON!
         rosters = db.getRosterPlayers(teamName, week_num);
 
-        teamName = TeamWeekActivity.team_name;
+
         team = (TextView) findViewById(R.id.teamTextView);
         team.setText(teamName);
 
-        week_num = TeamWeekActivity.weekNum;
+
 
 
         weekNum = (TextView) findViewById(R.id.weekNumTextView);
@@ -61,33 +63,33 @@ public class AddPointsActivity extends AppCompatActivity {
 
         qb = (TextView) findViewById(R.id.qbTextView);
         qb.setText(rosters[0].getPlayerName());
-        qbEditText.setHint(rosters[0].getPts());
+        qbEditText.setHint("" + rosters[0].getPts());
 
 
         rb = (TextView) findViewById(R.id.rbTextView);
         rb.setText(rosters[1].getPlayerName());
-        rbEditText.setHint(rosters[1].getPts());
+        rbEditText.setHint("" +rosters[1].getPts());
 
 
         wr = (TextView) findViewById(R.id.wrTextView);
         wr.setText(rosters[2].getPlayerName());
-        wrEditText.setHint(rosters[2].getPts());
+        wrEditText.setHint("" +rosters[2].getPts());
 
 
 
         te = (TextView) findViewById(R.id.teTextView);
         te.setText(rosters[3].getPlayerName());
-        teEditText.setHint(rosters[3].getPts());
+        teEditText.setHint("" +rosters[3].getPts());
 
 
         k = (TextView) findViewById(R.id.kTextView);
         k.setText(rosters[4].getPlayerName());
-        kEditText.setHint(rosters[4].getPts());
+        kEditText.setHint("" +rosters[4].getPts());
 
 
         dst = (TextView) findViewById(R.id.dstTextView);
         dst.setText(rosters[5].getPlayerName());
-        dstEditText.setHint(rosters[5].getPts());
+        dstEditText.setHint("" +rosters[5].getPts());
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

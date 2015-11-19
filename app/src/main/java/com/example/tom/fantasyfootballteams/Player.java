@@ -13,6 +13,16 @@ public class Player {
     private String positionName;
     private String teamName;
 
+    public int getBenched() {
+        return benched;
+    }
+
+    public void setBenched(int benched) {
+        this.benched = benched;
+    }
+
+    private int benched;
+
     public Player(String name, String teamName, String positionName) {
         this.name = name;
         this.positionName = positionName;
