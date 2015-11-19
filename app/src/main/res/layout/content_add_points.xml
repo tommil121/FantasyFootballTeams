@@ -90,7 +90,6 @@
                 android:id="@+id/QBPts"
                 android:layout_column="17"
                 android:visibility="visible"
-                android:hint="  0"
                 android:gravity="fill_horizontal"
                 android:width="35dp" />
 
@@ -129,7 +128,7 @@
                 android:layout_height="wrap_content"
                 android:layout_column="17"
                 android:id="@+id/RBPts"
-                android:hint="  0"
+
                 android:width="35dp" />
 
             <TextView
@@ -166,7 +165,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/WRPts"
                 android:layout_column="17"
-                android:hint="  0"
+
                 android:width="35dp" />
 
             <TextView
@@ -204,7 +203,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/TEPts"
                 android:layout_column="17"
-                android:hint="  0"
+
                 android:width="35dp" />
 
             <TextView
@@ -241,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/DSTPts"
                 android:layout_column="17"
-                android:hint="  0"
+
                 android:width="35dp" />
 
             <TextView
@@ -278,7 +277,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/KPts"
                 android:layout_column="17"
-                android:hint="  0"
+
                 android:width="35dp" />
 
             <TextView

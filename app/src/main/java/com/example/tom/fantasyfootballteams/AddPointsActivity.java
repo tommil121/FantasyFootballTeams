@@ -5,6 +5,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -144,6 +145,28 @@ public class AddPointsActivity extends AppCompatActivity {
             //String so that it can be placed in the editText box
             //Does the same as String.valueOf(total_pts)
             total.setText("" + total_pts);
+
+            DBHandler db = new DBHandler(this, null);
+
+
+
+            db.updatePts("QB", teamName, week_num,  qbPts);
+            db.updatePts("RB", teamName, week_num,  rbPts);
+            db.updatePts("WR", teamName, week_num, wrPts);
+            db.updatePts("TE", teamName, week_num, tePts);
+            db.updatePts("K", teamName, week_num, kPts);
+            db.updatePts("DST", teamName, week_num, dstPts);
+
+
+            rosters = db.getRosterPlayers(teamName, week_num);
+
+            qbEditText.setHint("" + rosters[0].getPts());
+            rbEditText.setHint("" +rosters[1].getPts());
+            wrEditText.setHint("" +rosters[2].getPts());
+            teEditText.setHint("" +rosters[3].getPts());
+            kEditText.setHint("" +rosters[4].getPts());
+            dstEditText.setHint("" +rosters[5].getPts());
+
         }
     }
 

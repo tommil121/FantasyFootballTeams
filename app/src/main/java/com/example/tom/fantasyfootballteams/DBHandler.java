@@ -382,7 +382,7 @@ public class DBHandler extends SQLiteOpenHelper {
         return playerData;
     }
 
-    public String updateBenched(Player player){
+    public void updateBenched(Player player){
         SQLiteDatabase db = getWritableDatabase();
 
         String query;
@@ -398,11 +398,11 @@ public class DBHandler extends SQLiteOpenHelper {
             player.setBenched(0);
         }
 
-        String result = "" + db.rawQuery(query, null);
+       db.execSQL(query);
 
         db.close();
 
-        return result;
+
     }
 
     public void addToRoster(String playerName, String teamName, int week){
@@ -521,6 +521,22 @@ public class DBHandler extends SQLiteOpenHelper {
         Log.v("Roster Array", rosterData[0].toString());
 
         return rosterData;
+
+
+    }
+
+    public void updatePts(String position, String teamName, int weekNum, int pts){
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "UPDATE " + TABLE_ROSTER + " SET " + COLUMN_ROSTER_PTS + " = " + pts + " WHERE "
+                + COLUMN_ROSTER_PLAYER_POSITION + "= \"" + position + "\" AND " + COLUMN_ROSTER_PLAYER_TEAM_NAME
+                + "= \"" + teamName + "\" AND " + COLUMN_ROSTER_WEEK + " = " + weekNum + ";";
+
+        Log.v("ptsUpdate", query);
+
+        db.execSQL(query);
+
+        db.close();
 
 
     }
