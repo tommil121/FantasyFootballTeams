@@ -109,6 +109,13 @@
             android:text="Add Players"
             android:id="@+id/addToRosterButton"
             android:onClick="InsertRoster" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Points"
+            android:id="@+id/addPointsButton"
+            android:onClick="addPointsActivity" />
     </LinearLayout>
 
 </RelativeLayout>

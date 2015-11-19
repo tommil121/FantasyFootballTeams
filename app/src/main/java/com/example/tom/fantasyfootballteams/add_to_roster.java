@@ -19,6 +19,7 @@ public class add_to_roster extends AppCompatActivity {
 
     String team;
     int week;
+    Intent intent;
 
     //declare spinners
     Spinner teamSpinner;
@@ -251,8 +252,17 @@ public class add_to_roster extends AppCompatActivity {
 
     }
 
+    public void addPointsActivity(View view){
+
+        /*weekNum = weekSpinner.getSelectedItemPosition();
+        weekNum = weekNum + 1;
+        team_name =  teams[teamNameSpinner.getSelectedItemPosition()].getTeamName();
+        */
 
 
+        intent = new Intent(this, AddPointsActivity.class);
+        startActivity(intent);
+    }
 
 
 
