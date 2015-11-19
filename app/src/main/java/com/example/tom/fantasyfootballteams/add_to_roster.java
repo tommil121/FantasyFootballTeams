@@ -235,12 +235,12 @@ public class add_to_roster extends AppCompatActivity {
 
         } else {
 
-            dbHandler.addToRoster((String) qbSpinner.getSelectedItem(), team, week);
-            dbHandler.addToRoster((String) rbSpinner.getSelectedItem(), team, week);
-            dbHandler.addToRoster((String) wrSpinner.getSelectedItem(), team, week);
-            dbHandler.addToRoster((String) teSpinner.getSelectedItem(), team, week);
-            dbHandler.addToRoster((String) kSpinner.getSelectedItem(), team, week);
-            dbHandler.addToRoster((String) dstSpinner.getSelectedItem(), team, week);
+            dbHandler.addToRoster( qbSpinner.getSelectedItem().toString(), team, week);
+            dbHandler.addToRoster(rbSpinner.getSelectedItem().toString(), team, week);
+            dbHandler.addToRoster( wrSpinner.getSelectedItem().toString(), team, week);
+            dbHandler.addToRoster( teSpinner.getSelectedItem().toString(), team, week);
+            dbHandler.addToRoster( kSpinner.getSelectedItem().toString(), team, week);
+            dbHandler.addToRoster( dstSpinner.getSelectedItem().toString(), team, week);
 
             Toast.makeText(this, ("You have successfully filled your roster for week " + week),
                     Toast.LENGTH_LONG).show();

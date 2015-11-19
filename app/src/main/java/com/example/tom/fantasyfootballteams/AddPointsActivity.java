@@ -16,8 +16,12 @@ public class AddPointsActivity extends AppCompatActivity {
 
     //vars for handling names
     TextView team, qb, rb, wr, te, k, dst, weekNum;
-    String teamName, qbName, rbName, wrName, teName,
-            kName, dstName;
+    String teamName;
+
+    int week_num;
+
+    Roster [] rosters;
+
 
     //create EditText variables for score input
     EditText qbEditText, rbEditText, wrEditText, teEditText,
@@ -28,46 +32,21 @@ public class AddPointsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_points);
 
-        //fakeTeam eventually becomes return from roster table
-        Team maury = new Team("Maury", "2015", "NFC");
-        teamName = maury.getTeamName();
+        DBHandler db = new DBHandler(this, null);
+
+
+        //NOT FILLING FOR SOME REASON!
+        rosters = db.getRosterPlayers(teamName, week_num);
+
+        teamName = TeamWeekActivity.team_name;
         team = (TextView) findViewById(R.id.teamTextView);
         team.setText(teamName);
 
-        //fake week num
+        week_num = TeamWeekActivity.weekNum;
+
+
         weekNum = (TextView) findViewById(R.id.weekNumTextView);
-        weekNum.setText("1");
-
-        //added dummy PLAYER data to check ui
-        Player qbPlayer = new Player("Maury Povich", "Maury", "QB");
-        qbName = qbPlayer.getName();
-        qb = (TextView) findViewById(R.id.qbTextView);
-        qb.setText(qbName);
-
-        Player rbPlayer = new Player("Jerry Springer", "Maury", "RB");
-        rbName = rbPlayer.getName();
-        rb = (TextView) findViewById(R.id.rbTextView);
-        rb.setText(rbName);
-
-        Player wrPlayer = new Player("Steve Wilkos", "Maury", "WR");
-        wrName = wrPlayer.getName();
-        wr = (TextView) findViewById(R.id.wrTextView);
-        wr.setText(wrName);
-
-        Player tePlayer = new Player("Montell Williams", "Maury", "TE");
-        teName = tePlayer.getName();
-        te = (TextView) findViewById(R.id.teTextView);
-        te.setText(teName);
-
-        Player kPlayer = new Player("Oprah", "Maury", "K");
-        kName = kPlayer.getName();
-        k = (TextView) findViewById(R.id.kTextView);
-        k.setText(kName);
-
-        Player dstPlayer = new Player("Ellen", "Maury", "DST");
-        dstName = dstPlayer.getName();
-        dst = (TextView) findViewById(R.id.dstTextView);
-        dst.setText(dstName);
+        weekNum.setText(""+week_num);
 
         //set qbEditText var to equal the text in QBPts editText input
         qbEditText = (EditText) findViewById(R.id.QBPts);
@@ -76,6 +55,40 @@ public class AddPointsActivity extends AppCompatActivity {
         teEditText = (EditText) findViewById(R.id.TEPts);
         kEditText = (EditText) findViewById(R.id.KPts);
         dstEditText = (EditText) findViewById(R.id.DSTPts);
+
+
+
+
+        qb = (TextView) findViewById(R.id.qbTextView);
+        qb.setText(rosters[0].getPlayerName());
+        qbEditText.setHint(rosters[0].getPts());
+
+
+        rb = (TextView) findViewById(R.id.rbTextView);
+        rb.setText(rosters[1].getPlayerName());
+        rbEditText.setHint(rosters[1].getPts());
+
+
+        wr = (TextView) findViewById(R.id.wrTextView);
+        wr.setText(rosters[2].getPlayerName());
+        wrEditText.setHint(rosters[2].getPts());
+
+
+
+        te = (TextView) findViewById(R.id.teTextView);
+        te.setText(rosters[3].getPlayerName());
+        teEditText.setHint(rosters[3].getPts());
+
+
+        k = (TextView) findViewById(R.id.kTextView);
+        k.setText(rosters[4].getPlayerName());
+        kEditText.setHint(rosters[4].getPts());
+
+
+        dst = (TextView) findViewById(R.id.dstTextView);
+        dst.setText(rosters[5].getPlayerName());
+        dstEditText.setHint(rosters[5].getPts());
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
