@@ -1,5 +1,7 @@
 package com.example.tom.fantasyfootballteams;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -11,6 +13,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.content.SharedPreferences;
 
 
 
@@ -24,10 +27,24 @@ public class player_results extends AppCompatActivity {
     //that our activity can use
     ListAdapter adapter;
 
+    SharedPreferences prefs;
+
+    //variable that tells how to sort
+    String sortBy ;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        prefs = getSharedPreferences(
+                "com.example.tom.fantasyfootballteams", Context.MODE_PRIVATE);
+
+        if(!prefs.getString("sort","").equals(null))
+            sortBy = prefs.getString("sort", "");
+        else
+            sortBy = null;
 
 
         setContentView(R.layout.activity_player_result);
@@ -35,7 +52,15 @@ public class player_results extends AppCompatActivity {
 
         String [] noPlayers = {"No players found!"};
 
-        playerData = dbHandler.getPlayers();
+        //figure out the sorting
+        if(sortBy == null)
+            playerData = dbHandler.getPlayers();
+        else if(sortBy.equals("name"))
+            playerData = dbHandler.getPlayersByName();
+        else if(sortBy.equals("position"))
+            playerData = dbHandler.getPlayersByPosition();
+        else if(sortBy.equals("team"))
+            playerData = dbHandler.getPlayersByTeam();
 
         if (playerData != null){
             adapter = new player_results_adapter(this, playerData);
@@ -72,6 +97,14 @@ public class player_results extends AppCompatActivity {
                //         .setAction("Action", null).show();
             //}
        // });*/
+    }
+
+
+    public void setSortBy(View v){
+        prefs.edit().putString("sort", (String) v.getTag()).apply();
+
+        Intent intent = new Intent(this, player_results.class);
+        startActivity(intent);
     }
 
 
