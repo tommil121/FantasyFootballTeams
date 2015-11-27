@@ -74,6 +74,12 @@ public class CreateTeamActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    //java code for button to go to Add Player Activity
+    public void goToAddPlayerActivity(View view){
+        intent = new Intent(this, add_player.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
