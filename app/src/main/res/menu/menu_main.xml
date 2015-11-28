@@ -7,7 +7,7 @@
             android:orderInCategory="1"
             app:showAsAction="never"
             android:title="Home"/>
-        <item android:id="@+id/menu_create_team"
+        <!--<item android:id="@+id/menu_create_team"
             android:orderInCategory="2"
             app:showAsAction="never"
             android:title="Create Team"/>
@@ -34,6 +34,6 @@
         <item android:id="@+id/menu_team_week_activity"
             android:orderInCategory="8"
             app:showAsAction="never"
-            android:title="Select Team and Week"/>
+            android:title="Select Team and Week"/>-->
     </group>
 </menu>

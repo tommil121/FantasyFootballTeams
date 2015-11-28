@@ -101,7 +101,7 @@ public class CreateTeamActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
-            case R.id.menu_create_team :
+            /**case R.id.menu_create_team :
 
                 intent = new Intent(this, CreateTeamActivity.class);
                 startActivity(intent);
@@ -126,7 +126,7 @@ public class CreateTeamActivity extends AppCompatActivity {
                 startActivity(intent);
 
                 return true;
-
+            */
             default :
                 return super.onOptionsItemSelected(item);
         }

@@ -98,7 +98,7 @@ public class TeamResultsActivity extends AppCompatActivity {
                 startActivity(intent);
                 return true;
 
-            case R.id.menu_create_team :
+            /**case R.id.menu_create_team :
 
                 intent = new Intent(this, CreateTeamActivity.class);
                 startActivity(intent);
@@ -122,7 +122,7 @@ public class TeamResultsActivity extends AppCompatActivity {
                 intent = new Intent(this, delete_player.class);
                 startActivity(intent);
 
-                return true;
+                return true; */
 
             default :
                 return super.onOptionsItemSelected(item);

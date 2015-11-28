@@ -67,7 +67,8 @@ public class MainActivity extends AppCompatActivity {
                 return true;
 
             //set intent of menu to navigate to create_team_activity
-            case R.id.menu_create_team:
+
+            /**case R.id.menu_create_team:
 
                 intent = new Intent(this, CreateTeamActivity.class);
                 startActivity(intent);
@@ -110,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(this, TeamWeekActivity.class);
                 startActivity(intent);
 
-                return true;
+                return true; */
         }
 
         return super.onOptionsItemSelected(item);
