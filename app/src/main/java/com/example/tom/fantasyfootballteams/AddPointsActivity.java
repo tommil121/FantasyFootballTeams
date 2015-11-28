@@ -125,7 +125,7 @@ public class AddPointsActivity extends AppCompatActivity {
 
         if (qb.trim().equals("") || rb.trim().equals("") || wr.trim().equals("") ||
                 te.trim().equals("") || k.trim().equals("") || dst.trim().equals("")) {
-            Toast.makeText(this, "Please enter the number of points scored Each Player!",
+            Toast.makeText(this, "Please enter the number of points scored for Each Player!",
                     Toast.LENGTH_LONG).show();
         } else {
             //convert the string value in qb to integer, store it in int var qbPts

@@ -76,6 +76,11 @@ public class add_player extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToTeamWeekActivity(View view){
+        intent = new Intent(this, TeamWeekActivity.class);
+        startActivity(intent);
+    }
+
     public void addData (View view){
 
         String playerName = playerNameEditText.getText().toString();

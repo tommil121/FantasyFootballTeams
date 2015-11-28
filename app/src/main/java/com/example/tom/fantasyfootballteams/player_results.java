@@ -32,6 +32,7 @@ public class player_results extends AppCompatActivity {
     //variable that tells how to sort
     String sortBy ;
 
+    Intent intent;
 
 
     @Override
@@ -107,5 +108,8 @@ public class player_results extends AppCompatActivity {
         startActivity(intent);
     }
 
-
+    public void goToTeamWeekActivity(View view){
+        intent = new Intent(this, TeamWeekActivity.class);
+        startActivity(intent);
+    }
 }

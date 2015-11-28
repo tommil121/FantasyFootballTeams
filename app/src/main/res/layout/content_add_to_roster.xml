@@ -104,17 +104,19 @@
             android:gravity="fill_horizontal" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Add Players"
             android:id="@+id/addToRosterButton"
+            android:layout_gravity="right"
             android:onClick="InsertRoster" />
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="150dp"
             android:layout_height="wrap_content"
             android:text="Add Points"
             android:id="@+id/addPointsButton"
+            android:layout_gravity="right"
             android:onClick="addPointsActivity" />
     </LinearLayout>
 
