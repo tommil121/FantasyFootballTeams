@@ -128,16 +128,9 @@ public class player_results extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()) {
+        intent = new Intent(this, MainActivity.class);
 
-            case R.id.menu_home:
-                intent = new Intent(this, MainActivity.class);
-
-                startActivity(intent);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
+        startActivity(intent);
+        return true;
     }
 }

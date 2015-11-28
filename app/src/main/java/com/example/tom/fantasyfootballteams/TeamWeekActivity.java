@@ -108,16 +108,10 @@ public class TeamWeekActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
-        switch (item.getItemId()) {
+        intent = new Intent(this, MainActivity.class);
 
-            case R.id.menu_home:
-                intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        return true;
 
-                startActivity(intent);
-                return true;
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }
     }
 }
