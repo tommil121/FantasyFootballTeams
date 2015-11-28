@@ -44,7 +44,7 @@ public class TeamResultsAdapter extends ArrayAdapter<Team> {
         leagueNameTextView = (TextView) teamView.findViewById(R.id.leagueNameTextView);
 
         //set references
-        teamImage.setImageResource(R.drawable.maury);
+        teamImage.setImageResource(R.drawable.nfl);
         teamNameTextView.setText(team.getTeamName());
         seasonTextView.setText(team.getSeason());
         leagueNameTextView.setText(team.getLeagueName());
