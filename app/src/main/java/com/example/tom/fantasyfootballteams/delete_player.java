@@ -31,6 +31,9 @@ public class delete_player extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //change name of page
+        setTitle("Delete a Player");
+
         playerSpinner = (Spinner)findViewById(R.id.select_player_spinner);
 
         dbHandler = new DBHandler(this, null);

@@ -37,6 +37,9 @@ public class add_player extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_player);
 
+        //change name of page
+        setTitle("Add Players to My Team");
+
         playerNameEditText = (EditText) findViewById(R.id.player_name);
         teamNameSpinner = (Spinner)findViewById(R.id.team_name_spinner);
         positionSpinner = (Spinner)findViewById(R.id.position_spinner);

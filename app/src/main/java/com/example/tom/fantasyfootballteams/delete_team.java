@@ -31,6 +31,9 @@ public class delete_team extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //change name of page
+        setTitle("Delete a Team");
+
         teamNameSpinner = (Spinner)findViewById(R.id.select_team_spinner);
 
         dbHandler = new DBHandler(this, null);

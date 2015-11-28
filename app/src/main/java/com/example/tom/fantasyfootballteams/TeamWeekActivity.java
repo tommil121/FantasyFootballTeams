@@ -34,6 +34,9 @@ public class TeamWeekActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        //change name of page
+        setTitle("Select to Set Roster & Points");
+
         teamNameSpinner = (Spinner)findViewById(R.id.team_spinner);
         weekSpinner = (Spinner) findViewById(R.id.weekSpinner);
 

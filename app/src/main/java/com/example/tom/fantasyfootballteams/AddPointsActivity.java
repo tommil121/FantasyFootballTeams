@@ -35,6 +35,9 @@ public class AddPointsActivity extends AppCompatActivity {
 
         DBHandler db = new DBHandler(this, null);
 
+        //change name of page
+        setTitle("Enter Weekly Points");
+
         teamName = TeamWeekActivity.team_name;
         week_num = TeamWeekActivity.weekNum;
 

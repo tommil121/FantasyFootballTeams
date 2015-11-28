@@ -35,6 +35,9 @@ public class TeamResultsActivity extends AppCompatActivity {
 
         dbHandler = new DBHandler(this, null);
 
+        //change name of page
+        setTitle("View My Teams");
+
         String [] noTeams = {"No teams found!"};
 
         teamData = dbHandler.getTeams();

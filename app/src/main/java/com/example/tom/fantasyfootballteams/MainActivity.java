@@ -34,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        //change name of page
+        setTitle("Fantasy Football Teams");
     }
 
     public void goToCreateTeam(View view){

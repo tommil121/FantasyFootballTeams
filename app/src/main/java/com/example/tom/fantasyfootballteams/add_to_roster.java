@@ -74,6 +74,9 @@ public class add_to_roster extends AppCompatActivity {
             }
         });
 
+        //change name of page
+        setTitle("Set My Weekly Roster");
+
         //initialize spinners
 
         qbSpinner = (Spinner) findViewById(R.id.qb_spinner);

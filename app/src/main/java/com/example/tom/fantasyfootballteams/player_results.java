@@ -39,6 +39,9 @@ public class player_results extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //change name of page
+        setTitle("View My Players");
+
         prefs = getSharedPreferences(
                 "com.example.tom.fantasyfootballteams", Context.MODE_PRIVATE);
 

@@ -28,6 +28,9 @@ public class CreateTeamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_team);
 
+        //change name of page
+        setTitle("Create a New Team");
+
         teamNameEditText = (EditText)findViewById(R.id.teamNameEditText);
         seasonEditText = (EditText)findViewById(R.id.seasonEditText);
         leagueNameEditText = (EditText)findViewById(R.id.leagueNameEditText);
