@@ -26,6 +26,8 @@ public class TeamResultsActivity extends AppCompatActivity {
 
     SharedPreferences prefs;
 
+    private Team [] teams;
+
 
     //create intent object for menu
     Intent intent;
@@ -120,6 +122,25 @@ public class TeamResultsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, delete_team.class);
         startActivity(intent);
     }
+
+    public void goToAddPlayerActivity(View view){
+
+        dbHandler = new DBHandler(this, null);
+
+        teams = dbHandler.getTeams();
+
+        if(teams != null){
+            intent = new Intent(this, add_player.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "You must first add a team!",
+                    Toast.LENGTH_LONG).show();
+        }
+
+
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

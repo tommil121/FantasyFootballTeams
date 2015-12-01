@@ -83,8 +83,21 @@ public class CreateTeamActivity extends AppCompatActivity {
 
     //java code for button to go to Add Player Activity
     public void goToAddPlayerActivity(View view){
-        intent = new Intent(this, add_player.class);
-        startActivity(intent);
+
+        dbHandler = new DBHandler(this, null);
+
+        teams = dbHandler.getTeams();
+
+        if(teams != null){
+            intent = new Intent(this, add_player.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "You must first add a team!",
+                    Toast.LENGTH_LONG).show();
+        }
+
+
     }
 
     @Override
