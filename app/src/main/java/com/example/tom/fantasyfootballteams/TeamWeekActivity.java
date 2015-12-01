@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -29,6 +30,7 @@ public class TeamWeekActivity extends AppCompatActivity {
     Team [] teams;
     ArrayList<String> teamList;
 
+    Roster [] rosters;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -87,15 +89,26 @@ public class TeamWeekActivity extends AppCompatActivity {
     }
 
     public void goToAddPointsActivity(View view){
-
         weekNum = weekSpinner.getSelectedItemPosition();
         weekNum = weekNum + 1;
         team_name =  teams[teamNameSpinner.getSelectedItemPosition()].getTeamName();
+        dbHandler = new DBHandler(this, null);
+
+        rosters = dbHandler.getRosterPlayers(team_name,weekNum);
+
+        if(teams != null){
+            intent = new Intent(this, AddPointsActivity.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "You must first add a roster!",
+                    Toast.LENGTH_LONG).show();
+        }
 
 
 
-        intent = new Intent(this, AddPointsActivity.class);
-        startActivity(intent);
+
+
     }
 
     @Override

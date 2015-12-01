@@ -23,6 +23,8 @@ public class add_to_roster extends AppCompatActivity {
     int week;
     Intent intent;
 
+    Roster rosters[];
+
     //declare spinners
     Spinner teamSpinner;
     Spinner qbSpinner;
@@ -243,14 +245,22 @@ public class add_to_roster extends AppCompatActivity {
 
     public void addPointsActivity(View view){
 
-        /*weekNum = weekSpinner.getSelectedItemPosition();
-        weekNum = weekNum + 1;
-        team_name =  teams[teamNameSpinner.getSelectedItemPosition()].getTeamName();
-        */
+
+        dbHandler = new DBHandler(this, null);
+
+        rosters = dbHandler.getRosterPlayers(TeamWeekActivity.team_name, TeamWeekActivity.weekNum);
+
+        if(teams != null){
+            intent = new Intent(this, AddPointsActivity.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "You must first add a roster!",
+                    Toast.LENGTH_LONG).show();
+        }
 
 
-        intent = new Intent(this, AddPointsActivity.class);
-        startActivity(intent);
+
     }
 
     @Override
