@@ -132,11 +132,87 @@ public class DBHandler extends SQLiteOpenHelper {
                 + COLUMN_TEAMID + "=" + team.getId() + ";");
     }
 
-    public Team [] getTeams (){
+    public Team [] getTeamsByName(){
 
         SQLiteDatabase db = getWritableDatabase();
 
-        String query = "SELECT * FROM " + TABLE_TEAM + ";";
+        String query = "SELECT * FROM " + TABLE_TEAM + " SORT BY TEAM_NAME;";
+
+        Cursor c = db.rawQuery(query, null);
+
+        int numTeams = c.getCount();
+
+        if (numTeams >= 1) {
+
+            teamData = new Team [numTeams];
+
+            int i = 0;
+
+            c.moveToFirst();
+
+            while (!c.isAfterLast()){
+
+                teamData[i] = new Team (c.getString(c.getColumnIndex("teamName")),
+                        c.getString(c.getColumnIndex("season")),
+                        c.getString(c.getColumnIndex("leagueName"))
+                );
+
+                teamData[i].setId(c.getInt(c.getColumnIndex("id")));
+
+                c.moveToNext();
+
+                i++;
+            }
+        }
+
+        db.close();
+
+        return teamData;
+    }
+
+    public Team [] getTeamsBySeason(){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_TEAM + " SORT BY TEAM_SEASON;";
+
+        Cursor c = db.rawQuery(query, null);
+
+        int numTeams = c.getCount();
+
+        if (numTeams >= 1) {
+
+            teamData = new Team [numTeams];
+
+            int i = 0;
+
+            c.moveToFirst();
+
+            while (!c.isAfterLast()){
+
+                teamData[i] = new Team (c.getString(c.getColumnIndex("teamName")),
+                        c.getString(c.getColumnIndex("season")),
+                        c.getString(c.getColumnIndex("leagueName"))
+                );
+
+                teamData[i].setId(c.getInt(c.getColumnIndex("id")));
+
+                c.moveToNext();
+
+                i++;
+            }
+        }
+
+        db.close();
+
+        return teamData;
+    }
+
+    public Team [] getTeamsByLeague(){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_TEAM + " SORT BY TEAM_LEAGUE;";
 
         Cursor c = db.rawQuery(query, null);
 
@@ -185,6 +261,44 @@ public class DBHandler extends SQLiteOpenHelper {
             query = "SELECT * FROM " + TABLE_TEAM + " WHERE " + where + operator + "\"" + condition + "\"" +
                     " AND " + andWhere + andOp + "\"" + andCond + "\""  + ";";
 
+
+        Cursor c = db.rawQuery(query, null);
+
+        int numTeams = c.getCount();
+
+        if (numTeams >= 1) {
+
+            teamData = new Team [numTeams];
+
+            int i = 0;
+
+            c.moveToFirst();
+
+            while (!c.isAfterLast()){
+
+                teamData[i] = new Team (c.getString(c.getColumnIndex("teamName")),
+                        c.getString(c.getColumnIndex("season")),
+                        c.getString(c.getColumnIndex("leagueName"))
+                );
+
+                teamData[i].setId(c.getInt(c.getColumnIndex("id")));
+
+                c.moveToNext();
+
+                i++;
+            }
+        }
+
+        db.close();
+
+        return teamData;
+    }
+
+    public Team [] getTeams (){
+
+        SQLiteDatabase db = getWritableDatabase();
+
+        String query = "SELECT * FROM " + TABLE_TEAM + ";";
 
         Cursor c = db.rawQuery(query, null);
 
