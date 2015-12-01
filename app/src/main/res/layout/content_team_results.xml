@@ -10,6 +10,53 @@
     tools:showIn="@layout/activity_team_results"
     tools:context="com.example.tom.fantasyfootballteams.TeamResultsActivity">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Sort By: "
+        android:id="@+id/sort_by_text"
+        />
+
+
+    <Button
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name"
+        android:id="@+id/team_button"
+        android:onClick="setSortBy"
+        android:tag="team"
+        android:nestedScrollingEnabled="false"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/sort_by_text"
+        android:layout_toEndOf="@+id/sort_by_text" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="season"
+        android:id="@+id/position_button"
+        android:layout_toRightOf="@+id/team_button"
+        android:layout_alignParentBottom="false"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:onClick="setSortBy"
+        android:tag="season"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="League"
+        android:id="@+id/name_button"
+        android:layout_alignParentBottom="false"
+        android:layout_toRightOf="@+id/position_button"
+        android:layout_toEndOf="@+id/position_button"
+        android:layout_alignParentTop="true"
+        android:onClick="setSortBy"
+        android:tag="league" />
+
+
     <ListView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

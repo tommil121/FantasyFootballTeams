@@ -284,6 +284,11 @@ public class DBHandler extends SQLiteOpenHelper {
         return playerData;
     }
 
+    //use for long press
+    public Player [] getPlayerWhereTeam(){
+        return null;
+    }
+
     public Player [] getPlayersByTeam (){
 
         SQLiteDatabase db = getWritableDatabase();

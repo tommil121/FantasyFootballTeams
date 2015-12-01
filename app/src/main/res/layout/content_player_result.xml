@@ -23,10 +23,10 @@
 
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Team Name"
+        android:text="Player Name"
         android:id="@+id/team_button"
         android:onClick="setSortBy"
-        android:tag="team"
+        android:tag="name"
         android:nestedScrollingEnabled="false"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/sort_by_text"
@@ -35,26 +35,26 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Position"
+        android:text="Team"
         android:id="@+id/position_button"
         android:layout_toRightOf="@+id/team_button"
         android:layout_alignParentBottom="false"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
         android:onClick="setSortBy"
-        android:tag="position"/>
+        android:tag="team"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Name"
+        android:text="Position"
         android:id="@+id/name_button"
         android:layout_alignParentBottom="false"
         android:layout_toRightOf="@+id/position_button"
         android:layout_toEndOf="@+id/position_button"
         android:layout_alignParentTop="true"
         android:onClick="setSortBy"
-        android:tag="name" />
+        android:tag="position" />
 
     <ListView
         android:layout_width="wrap_content"

@@ -7,7 +7,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:id="@+id/teamImageView"
-        android:src="@drawable/maury"
+        android:src="@drawable/nfl"
         android:layout_margin="5dp" />
 
     <TextView
