@@ -94,8 +94,20 @@ public class add_player extends AppCompatActivity {
     }
 
     public void goToTeamWeekActivity(View view){
-        intent = new Intent(this, TeamWeekActivity.class);
-        startActivity(intent);
+        dbHandler = new DBHandler(this, null);
+
+        teams = dbHandler.getTeams();
+
+        if(teams != null){
+            intent = new Intent(this, TeamWeekActivity.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "You must first add a team!",
+                    Toast.LENGTH_LONG).show();
+        }
+
+
     }
 
     public void addData (View view){
