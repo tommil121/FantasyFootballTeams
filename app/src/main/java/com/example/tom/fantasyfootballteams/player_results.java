@@ -82,27 +82,7 @@ public class player_results extends AppCompatActivity {
         //set adapater on playerListView
         playerListView.setAdapter(adapter);
 
-        //create listener to generate the Player ToString on user tap
-        /*playerListView.setOnItemClickListener(
-                new AdapterView.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        String name = String.valueOf(parent.getItemAtPosition(position));
-                        Toast.makeText(player_results.this, name, Toast.LENGTH_LONG).show();
-                    }
-                }
-        );
-        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        //setSupportActionBar(toolbar);
 
-        //FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        //fab.setOnClickListener(new View.OnClickListener() {
-         //   @Override
-           // public void onClick(View view) {
-             //   Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-               //         .setAction("Action", null).show();
-            //}
-       // });*/
     }
 
 

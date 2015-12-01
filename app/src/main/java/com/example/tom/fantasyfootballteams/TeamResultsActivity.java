@@ -48,6 +48,7 @@ public class TeamResultsActivity extends AppCompatActivity {
         else
             sortBy = null;
 
+        setContentView(R.layout.activity_team_results);
         dbHandler = new DBHandler(this, null);
 
         if(sortBy == null)
@@ -58,13 +59,17 @@ public class TeamResultsActivity extends AppCompatActivity {
             teamData = dbHandler.getTeamsBySeason();
         else if(sortBy.equals("league"))
             teamData = dbHandler.getTeamsByLeague();
+        else
+            teamData = dbHandler.getTeams();
 
         //change name of page
         setTitle("View My Teams");
 
         String [] noTeams = {"No teams found!"};
 
-        teamData = dbHandler.getTeams();
+
+
+
 
         if (teamData != null){
             adapter = new TeamResultsAdapter(this, teamData);
@@ -94,14 +99,7 @@ public class TeamResultsActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
 
     @Override
@@ -114,7 +112,7 @@ public class TeamResultsActivity extends AppCompatActivity {
     public void setSortBy(View v){
         prefs.edit().putString("sort", (String) v.getTag()).apply();
 
-        Intent intent = new Intent(this, player_results.class);
+        Intent intent = new Intent(this, TeamResultsActivity.class);
         startActivity(intent);
     }
 

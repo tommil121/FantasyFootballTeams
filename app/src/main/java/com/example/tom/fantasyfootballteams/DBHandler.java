@@ -136,7 +136,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getWritableDatabase();
 
-        String query = "SELECT * FROM " + TABLE_TEAM + " SORT BY TEAM_NAME;";
+        String query = "SELECT * FROM " + TABLE_TEAM + " ORDER BY " + COLUMN_TEAMNAME + ";";
 
         Cursor c = db.rawQuery(query, null);
 
@@ -174,7 +174,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getWritableDatabase();
 
-        String query = "SELECT * FROM " + TABLE_TEAM + " SORT BY TEAM_SEASON;";
+        String query = "SELECT * FROM " + TABLE_TEAM + " ORDER BY " + COLUMN_TEAMSEASON + ";";
 
         Cursor c = db.rawQuery(query, null);
 
@@ -212,7 +212,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         SQLiteDatabase db = getWritableDatabase();
 
-        String query = "SELECT * FROM " + TABLE_TEAM + " SORT BY TEAM_LEAGUE;";
+        String query = "SELECT * FROM " + TABLE_TEAM + " ORDER BY " + COLUMN_TEAMLEAGUENAME + ";";
 
         Cursor c = db.rawQuery(query, null);
 

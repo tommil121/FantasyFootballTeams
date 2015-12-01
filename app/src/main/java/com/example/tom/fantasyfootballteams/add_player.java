@@ -78,6 +78,8 @@ public class add_player extends AppCompatActivity {
 
     public void goToPlayerResultsActivity(View view){
 
+        dbHandler = new DBHandler(this, null);
+
         players = dbHandler.getPlayers();
 
         if(players != null){

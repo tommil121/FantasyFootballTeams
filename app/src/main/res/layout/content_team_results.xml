@@ -26,7 +26,7 @@
         android:text="Name"
         android:id="@+id/team_button"
         android:onClick="setSortBy"
-        android:tag="team"
+        android:tag="name"
         android:nestedScrollingEnabled="false"
         android:layout_alignParentTop="true"
         android:layout_toRightOf="@+id/sort_by_text"
@@ -61,9 +61,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/teamListView"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_below="@+id/team_button"
+        android:layout_alignBottom="@+id/addPlayersButton" />
 
     <Button
         android:layout_width="wrap_content"
