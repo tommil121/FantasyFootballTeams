@@ -32,6 +32,8 @@ public class add_player extends AppCompatActivity {
     Team [] teams;
     ArrayList<String> teamList;
 
+
+    Player players[] = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -75,8 +77,18 @@ public class add_player extends AppCompatActivity {
         }
 
     public void goToPlayerResultsActivity(View view){
-        intent = new Intent(this, player_results.class);
-        startActivity(intent);
+
+        players = dbHandler.getPlayers();
+
+        if(players != null){
+            intent = new Intent(this, player_results.class);
+            startActivity(intent);
+        }
+        else {
+            Toast.makeText(this, "You must first add a player!",
+                    Toast.LENGTH_LONG).show();
+        }
+
     }
 
     public void goToTeamWeekActivity(View view){
