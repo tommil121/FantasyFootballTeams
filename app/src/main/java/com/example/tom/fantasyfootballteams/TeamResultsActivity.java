@@ -118,6 +118,11 @@ public class TeamResultsActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void goToDeleteTeam(View view){
+        Intent intent = new Intent(this, delete_team.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
