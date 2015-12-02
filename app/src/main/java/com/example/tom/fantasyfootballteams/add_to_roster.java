@@ -250,14 +250,14 @@ public class add_to_roster extends AppCompatActivity {
 
         rosters = dbHandler.getRosterPlayers(TeamWeekActivity.team_name, TeamWeekActivity.weekNum);
 
-        if(teams != null){
-            intent = new Intent(this, AddPointsActivity.class);
-            startActivity(intent);
-        }
-        else {
-            Toast.makeText(this, "You must first add a roster!",
-                    Toast.LENGTH_LONG).show();
-        }
+        //if(team != null){
+        intent = new Intent(this, AddPointsActivity.class);
+        startActivity(intent);
+
+        //else {
+            //Toast.makeText(this, "You must first add a roster!",
+                    //Toast.LENGTH_LONG).show();
+        //}
 
 
 
