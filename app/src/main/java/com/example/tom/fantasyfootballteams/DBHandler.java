@@ -754,7 +754,7 @@ public class DBHandler extends SQLiteOpenHelper {
 
         db.close();
 
-        Log.v("Roster Array", rosterData[0].toString());
+
 
         return rosterData;
 

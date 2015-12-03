@@ -23,7 +23,7 @@ public class add_to_roster extends AppCompatActivity {
     int week;
     Intent intent;
 
-    Roster rosters[];
+    Roster rosters[] = null;
 
     //declare spinners
     Spinner teamSpinner;

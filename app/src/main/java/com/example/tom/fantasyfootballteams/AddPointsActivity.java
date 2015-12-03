@@ -68,37 +68,39 @@ public class AddPointsActivity extends AppCompatActivity {
         dstEditText = (EditText) findViewById(R.id.DSTPts);
 
 
+        if(rosters != null){
+            qb = (TextView) findViewById(R.id.qbTextView);
+            qb.setText(rosters[0].getPlayerName());
+            qbEditText.setHint("" + rosters[0].getPts());
 
 
-        qb = (TextView) findViewById(R.id.qbTextView);
-        qb.setText(rosters[0].getPlayerName());
-        qbEditText.setHint("" + rosters[0].getPts());
+            rb = (TextView) findViewById(R.id.rbTextView);
+            rb.setText(rosters[1].getPlayerName());
+            rbEditText.setHint("" +rosters[1].getPts());
 
 
-        rb = (TextView) findViewById(R.id.rbTextView);
-        rb.setText(rosters[1].getPlayerName());
-        rbEditText.setHint("" +rosters[1].getPts());
-
-
-        wr = (TextView) findViewById(R.id.wrTextView);
-        wr.setText(rosters[2].getPlayerName());
-        wrEditText.setHint("" +rosters[2].getPts());
+            wr = (TextView) findViewById(R.id.wrTextView);
+            wr.setText(rosters[2].getPlayerName());
+            wrEditText.setHint("" +rosters[2].getPts());
 
 
 
-        te = (TextView) findViewById(R.id.teTextView);
-        te.setText(rosters[3].getPlayerName());
-        teEditText.setHint("" +rosters[3].getPts());
+            te = (TextView) findViewById(R.id.teTextView);
+            te.setText(rosters[3].getPlayerName());
+            teEditText.setHint("" +rosters[3].getPts());
 
 
-        k = (TextView) findViewById(R.id.kTextView);
-        k.setText(rosters[4].getPlayerName());
-        kEditText.setHint("" +rosters[4].getPts());
+            k = (TextView) findViewById(R.id.kTextView);
+            k.setText(rosters[4].getPlayerName());
+            kEditText.setHint("" +rosters[4].getPts());
 
 
-        dst = (TextView) findViewById(R.id.dstTextView);
-        dst.setText(rosters[5].getPlayerName());
-        dstEditText.setHint("" +rosters[5].getPts());
+            dst = (TextView) findViewById(R.id.dstTextView);
+            dst.setText(rosters[5].getPlayerName());
+            dstEditText.setHint("" +rosters[5].getPts());
+        }
+
+
 
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);

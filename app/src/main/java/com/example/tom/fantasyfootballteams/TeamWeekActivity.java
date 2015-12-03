@@ -30,7 +30,7 @@ public class TeamWeekActivity extends AppCompatActivity {
     Team [] teams;
     ArrayList<String> teamList;
 
-    Roster [] rosters;
+    Roster [] rosters = null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,7 +96,7 @@ public class TeamWeekActivity extends AppCompatActivity {
 
         rosters = dbHandler.getRosterPlayers(team_name,weekNum);
 
-        if(teams != null){
+        if(rosters != null){
             intent = new Intent(this, AddPointsActivity.class);
             startActivity(intent);
         }
