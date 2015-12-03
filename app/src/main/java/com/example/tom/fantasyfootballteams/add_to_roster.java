@@ -215,17 +215,19 @@ public class add_to_roster extends AppCompatActivity {
 
     public void InsertRoster(View view){
 
-        if( qbSpinner.getSelectedItem().equals("You MUST add players to the selected team") ||
-                wrSpinner.getSelectedItem().equals("You MUST add players to the selected team") ||
-                rbSpinner.getSelectedItem().equals("You MUST add players to the selected team") ||
-                teSpinner.getSelectedItem().equals("You MUST add players to the selected team") ||
-                kSpinner.getSelectedItem().equals("You MUST add players to the selected team") ||
-                dstSpinner.getSelectedItem().equals("You MUST add players to the selected team")) {
+        if( qbSpinner.getSelectedItem().equals("You MUST add players to the selected team      ") ||
+                wrSpinner.getSelectedItem().equals("You MUST add players to the selected team      ") ||
+                rbSpinner.getSelectedItem().equals("You MUST add players to the selected team      ") ||
+                teSpinner.getSelectedItem().equals("You MUST add players to the selected team      ") ||
+                kSpinner.getSelectedItem().equals("You MUST add players to the selected team      ") ||
+                dstSpinner.getSelectedItem().equals("You MUST add players to the selected team      ")) {
             Toast.makeText(this, "You MUST fill out all fields",
                     Toast.LENGTH_LONG).show();
 
 
         } else {
+
+            System.out.println(wrSpinner.getSelectedItem());
 
             dbHandler.addToRoster( qb[(int)qbSpinner.getSelectedItemId()].getName(), team, week);
             dbHandler.addToRoster( rb[(int)rbSpinner.getSelectedItemId()].getName(), team, week);
