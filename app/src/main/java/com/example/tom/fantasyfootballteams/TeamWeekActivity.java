@@ -101,7 +101,7 @@ public class TeamWeekActivity extends AppCompatActivity {
             startActivity(intent);
         }
         else {
-            Toast.makeText(this, "You must first add a roster!",
+            Toast.makeText(this, "You must first set a roster!",
                     Toast.LENGTH_LONG).show();
         }
 
